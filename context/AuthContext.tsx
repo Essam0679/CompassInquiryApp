@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 // --- START OF FILE context/AuthContext.tsx (Full Updated with New UserProfile Fields) ---
 
 import { createContext, useContext, useState, useEffect, ReactNode } from 'react';
@@ -84,95 +83,11 @@ export function AuthProvider({ children }: AuthProviderProps) {
 
   return (
     <AuthContext.Provider value={{ currentUser, userProfile, login, register, logout, updateUserProfileInFirestore, loading, authLoading }}>
-=======
-import { createContext, useContext, useState, useEffect, ReactNode } from 'react';
-import { Platform } from 'react-native';
-import * as SecureStore from 'expo-secure-store';
-
-interface User {
-  id: string;
-  name: string;
-  email: string;
-  company?: string;
-  type?: string;
-}
-
-interface AuthContextData {
-  user: User | null;
-  login: (user: User) => Promise<void>;
-  logout: () => Promise<void>;
-  loading: boolean;
-}
-
-const AuthContext = createContext<AuthContextData>({} as AuthContextData);
-
-interface AuthProviderProps {
-  children: ReactNode;
-}
-
-const getStoredItem = async (key: string) => {
-  if (Platform.OS === 'web') {
-    const item = localStorage.getItem(key);
-    return item;
-  }
-  return await SecureStore.getItemAsync(key);
-};
-
-const setStoredItem = async (key: string, value: string) => {
-  if (Platform.OS === 'web') {
-    localStorage.setItem(key, value);
-    return;
-  }
-  await SecureStore.setItemAsync(key, value);
-};
-
-const removeStoredItem = async (key: string) => {
-  if (Platform.OS === 'web') {
-    localStorage.removeItem(key);
-    return;
-  }
-  await SecureStore.deleteItemAsync(key);
-};
-
-export function AuthProvider({ children }: AuthProviderProps) {
-  const [user, setUser] = useState<User | null>(null);
-  const [loading, setLoading] = useState(true);
-  
-  useEffect(() => {
-    async function loadStoredData() {
-      const storedUser = await getStoredItem('user');
-      
-      if (storedUser) {
-        setUser(JSON.parse(storedUser));
-      }
-      
-      setLoading(false);
-    }
-    
-    loadStoredData();
-  }, []);
-  
-  async function login(userData: User) {
-    await setStoredItem('user', JSON.stringify(userData));
-    setUser(userData);
-  }
-  
-  async function logout() {
-    await removeStoredItem('user');
-    setUser(null);
-  }
-  
-  return (
-    <AuthContext.Provider
-      value={{ user, login, logout, loading }}
-    >
->>>>>>> 8d1b3c625f4e35ee3c88f13c558bfb6f80b500b0
       {children}
     </AuthContext.Provider>
   );
 }
 
-<<<<<<< HEAD
 export function useAuth(): AuthContextData {
   const context = useContext(AuthContext);
   if (context === undefined) {
@@ -181,14 +96,3 @@ export function useAuth(): AuthContextData {
   return context;
 }
 // --- END OF FILE context/AuthContext.tsx (Full Updated with New UserProfile Fields) ---
-=======
-export function useAuth() {
-  const context = useContext(AuthContext);
-  
-  if (!context) {
-    throw new Error('useAuth must be used within an AuthProvider');
-  }
-  
-  return context;
-}
->>>>>>> 8d1b3c625f4e35ee3c88f13c558bfb6f80b500b0

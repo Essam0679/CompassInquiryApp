@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 // --- START OF FILE customs.tsx (Updated for In-Screen Cancel Button) ---
 
 import { useState } from 'react'; // Removed useEffect
@@ -23,31 +22,11 @@ interface DocumentFile {
 
 interface FormData {
   shipmentMode: string;
-=======
-import { useState } from 'react';
-import { View, Text, StyleSheet, ScrollView, TextInput, TouchableOpacity, ActivityIndicator } from 'react-native';
-import { useTheme } from '@/context/ThemeContext';
-import { useTranslation } from '@/context/I18nContext';
-import { useRouter } from 'expo-router';
-import { Check, Plus, File } from 'lucide-react-native';
-import Header from '@/components/common/Header';
-import FormStepper from '@/components/quote/FormStepper';
-import MultiForm from '@/components/quote/MultiForm';
-import * as ImagePicker from 'expo-image-picker';
-import DropDownPicker from 'react-native-dropdown-picker';
-import AsyncStorage from '@react-native-async-storage/async-storage';
-
-interface FormData {
->>>>>>> 8d1b3c625f4e35ee3c88f13c558bfb6f80b500b0
   importExportType: string;
   declarationType: string;
   originCountry: string;
   originCity: string;
-<<<<<<< HEAD
   pickupAddress: string;
-=======
-  pickupLocation: string;
->>>>>>> 8d1b3c625f4e35ee3c88f13c558bfb6f80b500b0
   destinationCountry: string;
   destinationCity: string;
   deliveryAddress: string;
@@ -55,7 +34,6 @@ interface FormData {
   hsCode: string;
   value: string;
   dutyExemption: boolean;
-<<<<<<< HEAD
   documents: {
     commercialInvoice: DocumentFile | null;
     certificateOfOrigin: DocumentFile | null;
@@ -63,9 +41,6 @@ interface FormData {
     packingList: DocumentFile | null;
     otherDocuments: DocumentFile[];
   };
-=======
-  documents: string | null;
->>>>>>> 8d1b3c625f4e35ee3c88f13c558bfb6f80b500b0
   notes: string;
 }
 
@@ -77,19 +52,12 @@ export default function CustomsQuoteScreen() {
   const [activeStep, setActiveStep] = useState(0);
   const [loading, setLoading] = useState(false);
   const [formData, setFormData] = useState<FormData>({
-<<<<<<< HEAD
     shipmentMode: 'sea_freight',
-=======
->>>>>>> 8d1b3c625f4e35ee3c88f13c558bfb6f80b500b0
     importExportType: 'permanent',
     declarationType: 'standard',
     originCountry: '',
     originCity: '',
-<<<<<<< HEAD
     pickupAddress: '',
-=======
-    pickupLocation: '',
->>>>>>> 8d1b3c625f4e35ee3c88f13c558bfb6f80b500b0
     destinationCountry: '',
     destinationCity: '',
     deliveryAddress: '',
@@ -97,7 +65,6 @@ export default function CustomsQuoteScreen() {
     hsCode: '',
     value: '',
     dutyExemption: false,
-<<<<<<< HEAD
     documents: {
       commercialInvoice: null,
       certificateOfOrigin: null,
@@ -119,15 +86,6 @@ export default function CustomsQuoteScreen() {
     { label: t('breakbulk'), value: 'breakbulk' }
   ];
   
-=======
-    documents: null,
-    notes: ''
-  });
-  
-  const [importExportTypeOpen, setImportExportTypeOpen] = useState(false);
-  const [declarationTypeOpen, setDeclarationTypeOpen] = useState(false);
-  
->>>>>>> 8d1b3c625f4e35ee3c88f13c558bfb6f80b500b0
   const importExportTypes = [
     { label: t('permanent'), value: 'permanent' },
     { label: t('temporary'), value: 'temporary' },
@@ -140,7 +98,6 @@ export default function CustomsQuoteScreen() {
     { label: 'ATA Carnet', value: 'ata_carnet' }
   ];
   
-<<<<<<< HEAD
   // Removed useEffect for navigation.setOptions
 
   const handleCancelExit = () => {
@@ -165,13 +122,10 @@ export default function CustomsQuoteScreen() {
     );
   };
 
-=======
->>>>>>> 8d1b3c625f4e35ee3c88f13c558bfb6f80b500b0
   const handleInputChange = (field: keyof FormData, value: any) => {
     setFormData(prev => ({ ...prev, [field]: value }));
   };
   
-<<<<<<< HEAD
   const pickDocument = async (documentType: string) => {
     try {
       const result = await DocumentPicker.getDocumentAsync({
@@ -241,18 +195,6 @@ export default function CustomsQuoteScreen() {
       
       return { ...prev, documents: updatedDocuments };
     });
-=======
-  const pickDocument = async () => {
-    const result = await ImagePicker.launchImageLibraryAsync({
-      mediaTypes: ImagePicker.MediaTypeOptions.All,
-      allowsEditing: false,
-      quality: 1,
-    });
-    
-    if (!result.canceled) {
-      handleInputChange('documents', result.assets[0].uri);
-    }
->>>>>>> 8d1b3c625f4e35ee3c88f13c558bfb6f80b500b0
   };
   
   const handleSubmit = async () => {
@@ -271,7 +213,6 @@ export default function CustomsQuoteScreen() {
       setLoading(false);
     }
   };
-<<<<<<< HEAD
 
   const handleNext = () => {
     if (activeStep < steps.length - 1) {
@@ -284,13 +225,10 @@ export default function CustomsQuoteScreen() {
       setActiveStep(activeStep - 1);
     }
   };
-=======
->>>>>>> 8d1b3c625f4e35ee3c88f13c558bfb6f80b500b0
   
   const steps = [
     {
       title: t('shipmentDetails'),
-<<<<<<< HEAD
       form: ( /* ... Your existing form content for step 1 ... */
         <View style={styles.formStep}>
           <Text style={[styles.sectionTitle, { color: colors.text }]}>
@@ -319,11 +257,6 @@ export default function CustomsQuoteScreen() {
           />
           
           <Text style={[styles.sectionTitle, { color: colors.text, marginTop: 24 }]}>
-=======
-      form: (
-        <View style={styles.formStep}>
-          <Text style={[styles.sectionTitle, { color: colors.text }]}>
->>>>>>> 8d1b3c625f4e35ee3c88f13c558bfb6f80b500b0
             {t('importExportType')}
           </Text>
           
@@ -344,12 +277,8 @@ export default function CustomsQuoteScreen() {
             dropDownContainerStyle={[styles.dropdownContainer, { backgroundColor: colors.backgroundSecondary, borderColor: colors.border }]}
             textStyle={[styles.dropdownText, { color: colors.text }]}
             zIndex={3000}
-<<<<<<< HEAD
             zIndexInverse={2000}
             listMode="SCROLLVIEW"
-=======
-            zIndexInverse={1000}
->>>>>>> 8d1b3c625f4e35ee3c88f13c558bfb6f80b500b0
           />
           
           <Text style={[styles.sectionTitle, { color: colors.text, marginTop: 24 }]}>
@@ -373,23 +302,15 @@ export default function CustomsQuoteScreen() {
             dropDownContainerStyle={[styles.dropdownContainer, { backgroundColor: colors.backgroundSecondary, borderColor: colors.border }]}
             textStyle={[styles.dropdownText, { color: colors.text }]}
             zIndex={2000}
-<<<<<<< HEAD
             zIndexInverse={3000}
             listMode="SCROLLVIEW"
-=======
-            zIndexInverse={2000}
->>>>>>> 8d1b3c625f4e35ee3c88f13c558bfb6f80b500b0
           />
         </View>
       )
     },
     {
       title: t('routeInformation'),
-<<<<<<< HEAD
       form: ( /* ... Your existing form content for step 2 ... */
-=======
-      form: (
->>>>>>> 8d1b3c625f4e35ee3c88f13c558bfb6f80b500b0
         <View style={styles.formStep}>
           <View style={styles.inputGroup}>
             <Text style={[styles.inputLabel, { color: colors.text }]}>
@@ -419,7 +340,6 @@ export default function CustomsQuoteScreen() {
 
           <View style={styles.inputGroup}>
             <Text style={[styles.inputLabel, { color: colors.text }]}>
-<<<<<<< HEAD
               {t('pickupAddress')}
             </Text>
             <TextInput
@@ -428,16 +348,6 @@ export default function CustomsQuoteScreen() {
               placeholderTextColor={colors.textSecondary}
               value={formData.pickupAddress}
               onChangeText={(text) => handleInputChange('pickupAddress', text)}
-=======
-              {t('pickupLocation')}
-            </Text>
-            <TextInput
-              style={[styles.textArea, { backgroundColor: colors.backgroundSecondary, color: colors.text, borderColor: colors.border }]}
-              placeholder={t('enterPickupLocation')}
-              placeholderTextColor={colors.textSecondary}
-              value={formData.pickupLocation}
-              onChangeText={(text) => handleInputChange('pickupLocation', text)}
->>>>>>> 8d1b3c625f4e35ee3c88f13c558bfb6f80b500b0
               multiline
               numberOfLines={3}
             />
@@ -488,11 +398,7 @@ export default function CustomsQuoteScreen() {
     },
     {
       title: t('cargoDetails'),
-<<<<<<< HEAD
       form: ( /* ... Your existing form content for step 3 ... */
-=======
-      form: (
->>>>>>> 8d1b3c625f4e35ee3c88f13c558bfb6f80b500b0
         <View style={styles.formStep}>
           <View style={styles.inputGroup}>
             <Text style={[styles.inputLabel, { color: colors.text }]}>
@@ -539,7 +445,6 @@ export default function CustomsQuoteScreen() {
       )
     },
     {
-<<<<<<< HEAD
       title: t('additionalServices'), // Renamed from 'documents' in original to match other forms' last step title
       form: ( // This is the LAST step
         <View style={styles.formStep}>
@@ -692,21 +597,6 @@ export default function CustomsQuoteScreen() {
               <Plus size={20} color={colors.primary} />
             </TouchableOpacity>
           </View>
-=======
-      title: t('additionalServices'),
-      form: (
-        <View style={styles.formStep}>
-          <TouchableOpacity 
-            style={[styles.documentButton, { backgroundColor: colors.backgroundSecondary, borderColor: colors.border }]}
-            onPress={pickDocument}
-          >
-            <File size={20} color={colors.primary} />
-            <Text style={[styles.documentButtonText, { color: colors.text }]}>
-              {formData.documents ? 'Documents Uploaded' : 'Upload Supporting Documents'}
-            </Text>
-            <Plus size={20} color={colors.primary} />
-          </TouchableOpacity>
->>>>>>> 8d1b3c625f4e35ee3c88f13c558bfb6f80b500b0
           
           <TouchableOpacity 
             style={styles.optionItem}
@@ -767,7 +657,6 @@ export default function CustomsQuoteScreen() {
         colors={colors}
       />
       
-<<<<<<< HEAD
       <ScrollView 
         style={styles.scrollView} 
         contentContainerStyle={styles.content}
@@ -790,27 +679,10 @@ export default function CustomsQuoteScreen() {
           activeForm={activeStep}
           onNext={handleNext}
           onPrevious={handleBack}
-=======
-      <ScrollView style={styles.scrollView} contentContainerStyle={styles.content}>
-        <MultiForm
-          forms={steps.map(step => step.form)}
-          activeForm={activeStep}
-          onNext={() => {
-            if (activeStep < steps.length - 1) {
-              setActiveStep(activeStep + 1);
-            }
-          }}
-          onPrevious={() => {
-            if (activeStep > 0) {
-              setActiveStep(activeStep - 1);
-            }
-          }}
->>>>>>> 8d1b3c625f4e35ee3c88f13c558bfb6f80b500b0
           isLastStep={activeStep === steps.length - 1}
           colors={colors}
           t={t}
         />
-<<<<<<< HEAD
 
         {/* "Cancel and Exit" Button - Placed after MultiForm */}
         <TouchableOpacity
@@ -822,8 +694,6 @@ export default function CustomsQuoteScreen() {
           </Text>
         </TouchableOpacity>
 
-=======
->>>>>>> 8d1b3c625f4e35ee3c88f13c558bfb6f80b500b0
       </ScrollView>
     </View>
   );
@@ -884,7 +754,6 @@ const styles = StyleSheet.create({
     fontFamily: 'Inter-Regular',
     fontSize: 14,
     borderWidth: 1,
-<<<<<<< HEAD
     textAlignVertical: 'top',
   },
   documentSection: {
@@ -894,8 +763,6 @@ const styles = StyleSheet.create({
     fontFamily: 'Inter-Medium',
     fontSize: 14,
     marginBottom: 8,
-=======
->>>>>>> 8d1b3c625f4e35ee3c88f13c558bfb6f80b500b0
   },
   documentButton: {
     flexDirection: 'row',
@@ -905,7 +772,6 @@ const styles = StyleSheet.create({
     borderRadius: 8,
     paddingHorizontal: 16,
     borderWidth: 1,
-<<<<<<< HEAD
   },
   documentButtonText: {
     fontFamily: 'Inter-Regular',
@@ -931,20 +797,10 @@ const styles = StyleSheet.create({
   },
   optionsContainer: { // This style was defined but not used in original customs.tsx, keeping for consistency
     marginVertical: 16,
-=======
-    marginBottom: 16,
-  },
-  documentButtonText: {
-    flex: 1,
-    fontFamily: 'Inter-Regular',
-    fontSize: 14,
-    marginLeft: 8,
->>>>>>> 8d1b3c625f4e35ee3c88f13c558bfb6f80b500b0
   },
   optionItem: {
     flexDirection: 'row',
     alignItems: 'center',
-<<<<<<< HEAD
     marginVertical: 16, 
   },
   checkbox: {
@@ -966,35 +822,11 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'center',
     marginTop: 24,
-=======
-    marginBottom: 24,
-  },
-  checkbox: {
-    width: 24,
-    height: 24,
-    borderRadius: 4,
-    borderWidth: 1,
-    marginRight: 12,
-    justifyContent: 'center',
-    alignItems: 'center',
-  },
-  optionText: {
-    fontFamily: 'Inter-Regular',
-    fontSize: 16,
-  },
-  submitButton: {
-    height: 56,
-    borderRadius: 8,
-    justifyContent: 'center',
-    alignItems: 'center',
-    marginTop: 16,
->>>>>>> 8d1b3c625f4e35ee3c88f13c558bfb6f80b500b0
   },
   submitButtonText: {
     fontFamily: 'Poppins-Medium',
     fontSize: 16,
   },
-<<<<<<< HEAD
   backButton: {
     alignSelf: 'flex-start',
     paddingVertical: 8,
@@ -1023,6 +855,3 @@ const styles = StyleSheet.create({
   },
 });
 // --- END OF FILE customs.tsx (Updated for In-Screen Cancel Button) ---
-=======
-});
->>>>>>> 8d1b3c625f4e35ee3c88f13c558bfb6f80b500b0

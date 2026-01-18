@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 // --- START OF FILE app/_layout.tsx (Refined Navigation Logic) ---
 import { useEffect } from 'react';
 import { Slot, useRouter, useSegments, SplashScreen } from 'expo-router'; // Added SplashScreen
@@ -78,56 +77,3 @@ export default function RootLayout() {
   );
 }
 // --- END OF FILE app/_layout.tsx (Refined Navigation Logic) ---
-=======
-import { useEffect } from 'react';
-import { Stack } from 'expo-router';
-import { StatusBar } from 'expo-status-bar';
-import { useFrameworkReady } from '@/hooks/useFrameworkReady';
-import { useFonts } from 'expo-font';
-import { Poppins_400Regular, Poppins_500Medium, Poppins_700Bold } from '@expo-google-fonts/poppins';
-import { Inter_400Regular, Inter_600SemiBold } from '@expo-google-fonts/inter';
-import * as SplashScreen from 'expo-splash-screen';
-import { AuthProvider } from '@/context/AuthContext';
-import { ThemeProvider } from '@/context/ThemeContext';
-import { I18nProvider } from '@/context/I18nContext';
-
-export default function RootLayout() {
-  useFrameworkReady();
-  
-  const [fontsLoaded, fontError] = useFonts({
-    'Poppins-Regular': Poppins_400Regular,
-    'Poppins-Medium': Poppins_500Medium,
-    'Poppins-Bold': Poppins_700Bold,
-    'Inter-Regular': Inter_400Regular,
-    'Inter-SemiBold': Inter_600SemiBold,
-  });
-
-  useEffect(() => {
-    if (fontsLoaded || fontError) {
-      // Hide splash screen once fonts are loaded
-      SplashScreen.hideAsync();
-    }
-  }, [fontsLoaded, fontError]);
-
-  // Return null to keep splash screen visible while fonts load
-  if (!fontsLoaded && !fontError) {
-    return null;
-  }
-
-  return (
-    <I18nProvider>
-      <ThemeProvider>
-        <AuthProvider>
-          <Stack screenOptions={{ headerShown: false }}>
-            <Stack.Screen name="(tabs)" options={{ headerShown: false }} />
-            <Stack.Screen name="(auth)" options={{ headerShown: false }} />
-            <Stack.Screen name="(modals)" options={{ presentation: 'modal' }} />
-            <Stack.Screen name="+not-found" options={{ title: 'Not Found' }} />
-          </Stack>
-          <StatusBar style="auto" />
-        </AuthProvider>
-      </ThemeProvider>
-    </I18nProvider>
-  );
-}
->>>>>>> 8d1b3c625f4e35ee3c88f13c558bfb6f80b500b0

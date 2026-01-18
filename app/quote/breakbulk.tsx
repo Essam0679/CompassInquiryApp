@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 // --- START OF FILE breakbulk.tsx (Updated for In-Screen Cancel Button) ---
 
 import { useState } from 'react'; // Removed useEffect
@@ -6,27 +5,14 @@ import { View, Text, StyleSheet, ScrollView, TextInput, TouchableOpacity, Activi
 import { useTheme } from '@/context/ThemeContext';
 import { useTranslation } from '@/context/I18nContext';
 import { useRouter } from 'expo-router'; // Removed useNavigation
-=======
-import { useState } from 'react';
-import { View, Text, StyleSheet, ScrollView, TextInput, TouchableOpacity, ActivityIndicator } from 'react-native';
-import { useTheme } from '@/context/ThemeContext';
-import { useTranslation } from '@/context/I18nContext';
-import { useRouter } from 'expo-router';
->>>>>>> 8d1b3c625f4e35ee3c88f13c558bfb6f80b500b0
 import { Check, Plus, File } from 'lucide-react-native';
 import Header from '@/components/common/Header';
 import FormStepper from '@/components/quote/FormStepper';
 import MultiForm from '@/components/quote/MultiForm';
-<<<<<<< HEAD
 import * as DocumentPicker from 'expo-document-picker';
 import DropDownPicker from 'react-native-dropdown-picker';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 // Removed: import ExitQuoteButton from '@/components/common/ExitQuoteButton';
-=======
-import * as ImagePicker from 'expo-image-picker';
-import DropDownPicker from 'react-native-dropdown-picker';
-import AsyncStorage from '@react-native-async-storage/async-storage';
->>>>>>> 8d1b3c625f4e35ee3c88f13c558bfb6f80b500b0
 
 interface FormData {
   shipmentType: string;
@@ -34,11 +20,7 @@ interface FormData {
   equipmentNeeded: string[];
   originCountry: string;
   originCity: string;
-<<<<<<< HEAD
   pickupAddress: string;
-=======
-  pickupLocation: string;
->>>>>>> 8d1b3c625f4e35ee3c88f13c558bfb6f80b500b0
   destinationCountry: string;
   destinationCity: string;
   deliveryAddress: string;
@@ -67,11 +49,7 @@ export default function BreakbulkQuoteScreen() {
     equipmentNeeded: [],
     originCountry: '',
     originCity: '',
-<<<<<<< HEAD
     pickupAddress: '',
-=======
-    pickupLocation: '',
->>>>>>> 8d1b3c625f4e35ee3c88f13c558bfb6f80b500b0
     destinationCountry: '',
     destinationCity: '',
     deliveryAddress: '',
@@ -119,7 +97,6 @@ export default function BreakbulkQuoteScreen() {
     { label: t('openTop'), value: 'open_top' }
   ];
   
-<<<<<<< HEAD
   // Removed useEffect for navigation.setOptions
 
   const handleCancelExit = () => {
@@ -144,8 +121,6 @@ export default function BreakbulkQuoteScreen() {
     );
   };
 
-=======
->>>>>>> 8d1b3c625f4e35ee3c88f13c558bfb6f80b500b0
   const handleInputChange = (field: keyof FormData, value: any) => {
     setFormData(prev => ({ ...prev, [field]: value }));
   };
@@ -160,7 +135,6 @@ export default function BreakbulkQuoteScreen() {
   };
   
   const pickDocument = async () => {
-<<<<<<< HEAD
     try {
       const result = await DocumentPicker.getDocumentAsync({
         copyToCacheDirectory: true,
@@ -172,16 +146,6 @@ export default function BreakbulkQuoteScreen() {
       }
     } catch (error) {
       console.error('Error picking document:', error);
-=======
-    const result = await ImagePicker.launchImageLibraryAsync({
-      mediaTypes: ImagePicker.MediaTypeOptions.All,
-      allowsEditing: false,
-      quality: 1,
-    });
-    
-    if (!result.canceled) {
-      handleInputChange('packingList', result.assets[0].uri);
->>>>>>> 8d1b3c625f4e35ee3c88f13c558bfb6f80b500b0
     }
   };
   
@@ -201,7 +165,6 @@ export default function BreakbulkQuoteScreen() {
       setLoading(false);
     }
   };
-<<<<<<< HEAD
 
   const handleNext = () => {
     if (activeStep < steps.length - 1) {
@@ -214,17 +177,11 @@ export default function BreakbulkQuoteScreen() {
       setActiveStep(activeStep - 1);
     }
   };
-=======
->>>>>>> 8d1b3c625f4e35ee3c88f13c558bfb6f80b500b0
   
   const steps = [
     {
       title: t('shipmentDetails'),
-<<<<<<< HEAD
       form: ( /* ... Your existing form content for step 1 ... */
-=======
-      form: (
->>>>>>> 8d1b3c625f4e35ee3c88f13c558bfb6f80b500b0
         <View style={styles.formStep}>
           <Text style={[styles.sectionTitle, { color: colors.text }]}>
             {t('shipmentType')}
@@ -248,10 +205,7 @@ export default function BreakbulkQuoteScreen() {
             textStyle={[styles.dropdownText, { color: colors.text }]}
             zIndex={3000}
             zIndexInverse={1000}
-<<<<<<< HEAD
             listMode="SCROLLVIEW"
-=======
->>>>>>> 8d1b3c625f4e35ee3c88f13c558bfb6f80b500b0
           />
           
           <Text style={[styles.sectionTitle, { color: colors.text, marginTop: 24 }]}>
@@ -276,10 +230,7 @@ export default function BreakbulkQuoteScreen() {
             textStyle={[styles.dropdownText, { color: colors.text }]}
             zIndex={2000}
             zIndexInverse={2000}
-<<<<<<< HEAD
             listMode="SCROLLVIEW"
-=======
->>>>>>> 8d1b3c625f4e35ee3c88f13c558bfb6f80b500b0
           />
           
           <Text style={[styles.sectionTitle, { color: colors.text, marginTop: 24 }]}>
@@ -310,11 +261,7 @@ export default function BreakbulkQuoteScreen() {
     },
     {
       title: t('routeInformation'),
-<<<<<<< HEAD
       form: ( /* ... Your existing form content for step 2 ... */
-=======
-      form: (
->>>>>>> 8d1b3c625f4e35ee3c88f13c558bfb6f80b500b0
         <View style={styles.formStep}>
           <View style={styles.inputGroup}>
             <Text style={[styles.inputLabel, { color: colors.text }]}>
@@ -350,13 +297,8 @@ export default function BreakbulkQuoteScreen() {
               style={[styles.textArea, { backgroundColor: colors.backgroundSecondary, color: colors.text, borderColor: colors.border }]}
               placeholder={formData.shipmentType === 'export' ? t('enterPickupLocation') : t('enterDeliveryAddress')}
               placeholderTextColor={colors.textSecondary}
-<<<<<<< HEAD
               value={formData.shipmentType === 'export' ? formData.pickupAddress : formData.deliveryAddress}
               onChangeText={(text) => handleInputChange(formData.shipmentType === 'export' ? 'pickupAddress' : 'deliveryAddress', text)}
-=======
-              value={formData.shipmentType === 'export' ? formData.pickupLocation : formData.deliveryAddress}
-              onChangeText={(text) => handleInputChange(formData.shipmentType === 'export' ? 'pickupLocation' : 'deliveryAddress', text)}
->>>>>>> 8d1b3c625f4e35ee3c88f13c558bfb6f80b500b0
               multiline
               numberOfLines={3}
             />
@@ -396,13 +338,8 @@ export default function BreakbulkQuoteScreen() {
               style={[styles.textArea, { backgroundColor: colors.backgroundSecondary, color: colors.text, borderColor: colors.border }]}
               placeholder={formData.shipmentType === 'export' ? t('enterDeliveryAddress') : t('enterPickupLocation')}
               placeholderTextColor={colors.textSecondary}
-<<<<<<< HEAD
               value={formData.shipmentType === 'export' ? formData.deliveryAddress : formData.pickupAddress}
               onChangeText={(text) => handleInputChange(formData.shipmentType === 'export' ? 'deliveryAddress' : 'pickupAddress', text)}
-=======
-              value={formData.shipmentType === 'export' ? formData.deliveryAddress : formData.pickupLocation}
-              onChangeText={(text) => handleInputChange(formData.shipmentType === 'export' ? 'deliveryAddress' : 'pickupLocation', text)}
->>>>>>> 8d1b3c625f4e35ee3c88f13c558bfb6f80b500b0
               multiline
               numberOfLines={3}
             />
@@ -412,11 +349,7 @@ export default function BreakbulkQuoteScreen() {
     },
     {
       title: t('cargoDetails'),
-<<<<<<< HEAD
       form: ( /* ... Your existing form content for step 3 ... */
-=======
-      form: (
->>>>>>> 8d1b3c625f4e35ee3c88f13c558bfb6f80b500b0
         <View style={styles.formStep}>
           <View style={styles.inputGroup}>
             <Text style={[styles.inputLabel, { color: colors.text }]}>
@@ -501,11 +434,7 @@ export default function BreakbulkQuoteScreen() {
     },
     {
       title: t('additionalServices'),
-<<<<<<< HEAD
       form: ( // This is the LAST step
-=======
-      form: (
->>>>>>> 8d1b3c625f4e35ee3c88f13c558bfb6f80b500b0
         <View style={styles.formStep}>
           <Text style={[styles.sectionTitle, { color: colors.text }]}>
             {t('incoterms')}
@@ -529,10 +458,7 @@ export default function BreakbulkQuoteScreen() {
             textStyle={[styles.dropdownText, { color: colors.text }]}
             zIndex={3000}
             zIndexInverse={1000}
-<<<<<<< HEAD
             listMode="SCROLLVIEW"
-=======
->>>>>>> 8d1b3c625f4e35ee3c88f13c558bfb6f80b500b0
           />
           
           <View style={styles.optionsContainer}>
@@ -611,7 +537,6 @@ export default function BreakbulkQuoteScreen() {
         colors={colors}
       />
       
-<<<<<<< HEAD
       <ScrollView 
         style={styles.scrollView} 
         contentContainerStyle={styles.content}
@@ -634,27 +559,10 @@ export default function BreakbulkQuoteScreen() {
           activeForm={activeStep}
           onNext={handleNext}
           onPrevious={handleBack}
-=======
-      <ScrollView style={styles.scrollView} contentContainerStyle={styles.content}>
-        <MultiForm
-          forms={steps.map(step => step.form)}
-          activeForm={activeStep}
-          onNext={() => {
-            if (activeStep < steps.length - 1) {
-              setActiveStep(activeStep + 1);
-            }
-          }}
-          onPrevious={() => {
-            if (activeStep > 0) {
-              setActiveStep(activeStep - 1);
-            }
-          }}
->>>>>>> 8d1b3c625f4e35ee3c88f13c558bfb6f80b500b0
           isLastStep={activeStep === steps.length - 1}
           colors={colors}
           t={t}
         />
-<<<<<<< HEAD
 
         {/* "Cancel and Exit" Button - Placed after MultiForm */}
         <TouchableOpacity
@@ -666,8 +574,6 @@ export default function BreakbulkQuoteScreen() {
           </Text>
         </TouchableOpacity>
 
-=======
->>>>>>> 8d1b3c625f4e35ee3c88f13c558bfb6f80b500b0
       </ScrollView>
     </View>
   );
@@ -728,10 +634,7 @@ const styles = StyleSheet.create({
     fontFamily: 'Inter-Regular',
     fontSize: 14,
     borderWidth: 1,
-<<<<<<< HEAD
     textAlignVertical: 'top',
-=======
->>>>>>> 8d1b3c625f4e35ee3c88f13c558bfb6f80b500b0
   },
   documentButton: {
     flexDirection: 'row',
@@ -740,7 +643,6 @@ const styles = StyleSheet.create({
     height: 50,
     borderRadius: 8,
     paddingHorizontal: 16,
-<<<<<<< HEAD
     marginBottom: 16,
     borderWidth: 1,
   },
@@ -749,16 +651,6 @@ const styles = StyleSheet.create({
     fontSize: 14,
     flex: 1,
     marginLeft: 12,
-=======
-    borderWidth: 1,
-    marginBottom: 16,
-  },
-  documentButtonText: {
-    flex: 1,
-    fontFamily: 'Inter-Regular',
-    fontSize: 14,
-    marginLeft: 8,
->>>>>>> 8d1b3c625f4e35ee3c88f13c558bfb6f80b500b0
   },
   optionsContainer: {
     marginVertical: 16,
@@ -769,7 +661,6 @@ const styles = StyleSheet.create({
     marginBottom: 12,
   },
   checkbox: {
-<<<<<<< HEAD
     width: 20,
     height: 20,
     borderRadius: 4,
@@ -788,32 +679,11 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'center',
     marginTop: 24,
-=======
-    width: 24,
-    height: 24,
-    borderRadius: 4,
-    borderWidth: 1,
-    marginRight: 12,
-    justifyContent: 'center',
-    alignItems: 'center',
-  },
-  optionText: {
-    fontFamily: 'Inter-Regular',
-    fontSize: 16,
-  },
-  submitButton: {
-    height: 56,
-    borderRadius: 8,
-    justifyContent: 'center',
-    alignItems: 'center',
-    marginTop: 16,
->>>>>>> 8d1b3c625f4e35ee3c88f13c558bfb6f80b500b0
   },
   submitButtonText: {
     fontFamily: 'Poppins-Medium',
     fontSize: 16,
   },
-<<<<<<< HEAD
   backButton: {
     alignSelf: 'flex-start',
     paddingVertical: 8,
@@ -842,6 +712,3 @@ const styles = StyleSheet.create({
   },
 });
 // --- END OF FILE breakbulk.tsx (Updated for In-Screen Cancel Button) ---
-=======
-});
->>>>>>> 8d1b3c625f4e35ee3c88f13c558bfb6f80b500b0

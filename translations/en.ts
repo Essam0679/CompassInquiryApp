@@ -1,16 +1,9 @@
-<<<<<<< HEAD
 // --- START OF FILE translations/en.ts (Updated) ---
 
 export const en = {
   // App
   appName: 'Compass Ocean Logistics',
 
-=======
-export const en = {
-  // App
-  appName: 'Compass Ocean Logistics',
-  
->>>>>>> 8d1b3c625f4e35ee3c88f13c558bfb6f80b500b0
   // Common
   loading: 'Loading...',
   cancel: 'Cancel',
@@ -19,7 +12,6 @@ export const en = {
   delete: 'Delete',
   submit: 'Submit',
   optional: 'Optional',
-<<<<<<< HEAD
   error: 'Error',
   yes: "Yes",
   no: "No",
@@ -30,32 +22,21 @@ export const en = {
   size: "Size", // Added
   quantity: "Quantity", // Added
 
-=======
-  
->>>>>>> 8d1b3c625f4e35ee3c88f13c558bfb6f80b500b0
   // Tabs
   home: 'Home',
   quote: 'Quote',
   tracking: 'Tracking',
   services: 'Services',
   profile: 'Profile',
-<<<<<<< HEAD
   history: 'History',
 
   // Home Screen
   homeHeroTitle: 'Global Shipping Solutions',
   homeHeroSubtitle: 'ٌ Reliable shipping services for businesses and individuals, Faster than you can imagine!',
-=======
-  
-  // Home Screen
-  homeHeroTitle: 'Global Shipping Solutions',
-  homeHeroSubtitle: 'Fast, reliable shipping services for businesses and individuals',
->>>>>>> 8d1b3c625f4e35ee3c88f13c558bfb6f80b500b0
   requestQuote: 'Request a Quote',
   ourServices: 'Our Services',
   whyChooseUs: 'Why Choose Us',
   globalNetwork: 'Global Network',
-<<<<<<< HEAD
   globalNetworkDesc: 'Connect with our vast network of own offices and shipping partners worldwide',
   customSolutions: 'Custom Solutions',
   customSolutionsDesc: 'Tailored shipping solutions to meet your specific requirements',
@@ -65,17 +46,6 @@ export const en = {
   contactUsDesc: 'Have questions? Our team is ready to assist you with all your shipping needs',
 
   // Quote Screen (Main Selection)
-=======
-  globalNetworkDesc: 'Connect with our vast network of shipping partners worldwide',
-  customSolutions: 'Custom Solutions',
-  customSolutionsDesc: 'Tailored shipping solutions to meet your specific requirements',
-  expertise: 'Industry Expertise',
-  expertiseDesc: 'Over 15 years of experience in the shipping and logistics industry',
-  contactUs: 'Contact Us',
-  contactUsDesc: 'Have questions? Our team is ready to assist you with all your shipping needs',
-  
-  // Quote Screen
->>>>>>> 8d1b3c625f4e35ee3c88f13c558bfb6f80b500b0
   selectShippingMode: 'Select Shipping Mode',
   selectShippingModeDesc: 'Choose the type of shipping service you need',
   seaFreight: 'Sea Freight',
@@ -93,7 +63,6 @@ export const en = {
   needHelp: 'Need Help?',
   needHelpDesc: 'Our shipping experts can guide you through the process',
   contactSupport: 'Contact Support',
-<<<<<<< HEAD
   newQuoteRequest: 'New Quotation Request',
   containerType: 'Container Type',
   containerSize: 'Container Size',
@@ -120,9 +89,6 @@ export const en = {
   countryBahrain: "Bahrain",
   countryKuwait: "Kuwait",
 
-=======
-  
->>>>>>> 8d1b3c625f4e35ee3c88f13c558bfb6f80b500b0
   // Services Screen
   servicesIntro: 'Compass Ocean Logistics offers comprehensive shipping and logistics solutions to meet the diverse needs of our customers. Explore our services below.',
   seaFreightLongDesc: 'Our sea freight services include both Full Container Load (FCL) and Less than Container Load (LCL) options. We handle all types of containers including 20ft, 40ft, High Cube, Reefer, and specialized equipment.',
@@ -134,7 +100,6 @@ export const en = {
   customRequests: 'Custom Shipping Requests',
   customRequestsDesc: 'Need a specialized shipping solution? Contact our team to discuss your specific requirements.',
   getQuote: 'Get Quote',
-<<<<<<< HEAD
   "cancelAndExit": "Cancel and Exit",
   "exitQuoteInquiry": "Exit Quote Inquiry",
   "exitQuoteConfirmation": "Are you sure you want to exit? Any unsaved data will be lost.",
@@ -162,11 +127,6 @@ export const en = {
   enterTrackingId: "Enter Tracking ID",
   invalidAWBFormat: "Invalid AWB format. Prefix 3 digits, number 7-8 digits.",
   awbPrefixNumberRequired: "AWB Prefix and Number are required.",
-=======
-  
-  // Tracking Screen
-  trackShipment: 'Track Shipment',
->>>>>>> 8d1b3c625f4e35ee3c88f13c558bfb6f80b500b0
   enterTrackingNumber: 'Enter tracking number',
   trackingNumberRequired: 'Tracking number is required',
   track: 'Track',
@@ -181,7 +141,6 @@ export const en = {
   enterTrackingDetails: 'Enter your tracking number to see shipment details',
   inTransit: 'In Transit',
   delivered: 'Delivered',
-<<<<<<< HEAD
   trackTraceInfo: "You will be redirected to track-trace.com where you may need to select the carrier and re-enter the number.",
 
 
@@ -192,23 +151,6 @@ export const en = {
   shipmentType: 'Shipment Type',
   import: 'Import',
   export: 'Export',
-=======
-  
-  // Quote Form
-  seaFreightQuote: 'Sea Freight Quote',
-  shipmentType: 'Shipment Type',
-  import: 'Import',
-  export: 'Export',
-  containerDetails: 'Container Details',
-  selectContainerType: 'Select container type',
-  selectContainerSize: 'Select container size',
-  fcl: 'Full Container Load (FCL)',
-  lcl: 'Less than Container Load (LCL)',
-  '20ft': '20ft Standard',
-  '40ft': '40ft Standard',
-  '40ftHC': '40ft High Cube',
-  leaveToCompany: 'Leave to Compass Ocean',
->>>>>>> 8d1b3c625f4e35ee3c88f13c558bfb6f80b500b0
   routeInformation: 'Route Information',
   pickupAddress: 'Pickup Address',
   deliveryAddress: 'Delivery Address',
@@ -218,38 +160,24 @@ export const en = {
   originCountry: 'Origin Country',
   enterDestinationCountry: 'Enter destination country',
   enterOriginCountry: 'Enter origin country',
-<<<<<<< HEAD
-=======
-  destinationPort: 'Destination Port',
-  originPort: 'Origin Port',
-  enterDestinationPort: 'Enter destination port',
-  enterOriginPort: 'Enter origin port',
->>>>>>> 8d1b3c625f4e35ee3c88f13c558bfb6f80b500b0
   cargoDetails: 'Cargo Details',
   commodityDescription: 'Commodity Description',
   enterCommodityDescription: 'Enter description of goods',
   hsCode: 'HS Code',
   enterHsCode: 'Enter HS code if known',
-<<<<<<< HEAD
   packingList: 'Packing List',
-=======
->>>>>>> 8d1b3c625f4e35ee3c88f13c558bfb6f80b500b0
   uploadPackingList: 'Upload Packing List',
   packingListUploaded: 'Packing List Uploaded',
   grossWeight: 'Gross Weight',
   enterGrossWeight: 'Enter total weight in KG',
-<<<<<<< HEAD
   dimensions: 'Dimensions',
   enterDimensions: 'Enter package dimensions (L x W x H)',
-=======
->>>>>>> 8d1b3c625f4e35ee3c88f13c558bfb6f80b500b0
   cargoReadyDate: 'Cargo Ready Date',
   enterCargoReadyDate: 'When will cargo be ready?',
   additionalServices: 'Additional Services',
   incoterms: 'Incoterms',
   requireInsurance: 'Require Cargo Insurance',
   requireClearance: 'Require Customs Clearance',
-<<<<<<< HEAD
   requireCustomsClearance: 'Require Customs Clearance',
   additionalNotes: 'Additional Notes',
   enterAdditionalNotes: 'Enter any special requirements or notes',
@@ -368,14 +296,6 @@ export const en = {
   otherDocuments: 'Other Documents',
   uploadAdditionalDocument: 'Upload Additional Document',
 
-=======
-  additionalNotes: 'Additional Notes',
-  enterAdditionalNotes: 'Enter any special requirements or notes',
-  submitQuoteRequest: 'Submit Quote Request',
-  next: 'Next',
-  previous: 'Previous',
-  
->>>>>>> 8d1b3c625f4e35ee3c88f13c558bfb6f80b500b0
   // Quote Success
   quoteSubmittedTitle: 'Quote Request Submitted!',
   quoteSubmittedMessage: 'Thank you for submitting your quote request. Our team will review your requirements and get back to you shortly.',
@@ -388,7 +308,6 @@ export const en = {
   contactEmail: 'Email',
   backToHome: 'Back to Home',
   requestAnotherQuote: 'Request Another Quote',
-<<<<<<< HEAD
 
   // Quote Sharing Options
   shareQuote: 'Share Quote',
@@ -413,9 +332,6 @@ export const en = {
   whatsAppFileShareInstr: "Please select WhatsApp to send the file. The quote details will also be displayed here for you to copy if needed.",
   copyDetailsHint: "(You might need to copy these details manually into your WhatsApp message if they are not pre-filled.)",
 
-=======
-  
->>>>>>> 8d1b3c625f4e35ee3c88f13c558bfb6f80b500b0
   // Authentication
   signIn: 'Sign In',
   signInSubtitle: 'Welcome back! Please sign in to continue',
@@ -425,19 +341,13 @@ export const en = {
   dontHaveAccount: 'Don\'t have an account?',
   register: 'Register',
   createAccount: 'Create Account',
-<<<<<<< HEAD
   noChangesMessage: 'No changes made',
-=======
->>>>>>> 8d1b3c625f4e35ee3c88f13c558bfb6f80b500b0
   createAccountSubtitle: 'Join Compass Ocean Logistics to access exclusive features',
   fullName: 'Full Name',
   phone: 'Phone Number',
   companyName: 'Company Name',
-<<<<<<< HEAD
   companyNameOptional: 'Company Name (optional)',
   noChangesTitle: 'No Changes Detected',
-=======
->>>>>>> 8d1b3c625f4e35ee3c88f13c558bfb6f80b500b0
   businessType: 'Business Type',
   importer: 'Importer',
   exporter: 'Exporter',
@@ -445,7 +355,6 @@ export const en = {
   personal: 'Personal',
   confirmPassword: 'Confirm Password',
   alreadyHaveAccount: 'Already have an account?',
-<<<<<<< HEAD
   country: "Country",
   selectCountry: "Select your country",
   countryRequired: "Country is required",
@@ -457,9 +366,6 @@ export const en = {
   bahrain: "Bahrain",
   kuwait: "Kuwait",
 
-=======
-  
->>>>>>> 8d1b3c625f4e35ee3c88f13c558bfb6f80b500b0
   // Validation
   emailRequired: 'Email is required',
   emailInvalid: 'Please enter a valid email address',
@@ -470,20 +376,13 @@ export const en = {
   phoneInvalid: 'Please enter a valid phone number',
   confirmPasswordRequired: 'Please confirm your password',
   passwordsDoNotMatch: 'Passwords do not match',
-<<<<<<< HEAD
 
   // Profile, Edit Profile, Settings
-=======
-  trackingNumberRequired: 'Please enter a tracking number',
-  
-  // Profile
->>>>>>> 8d1b3c625f4e35ee3c88f13c558bfb6f80b500b0
   signInRequired: 'Please sign in to view your profile',
   logoutTitle: 'Logout',
   logoutConfirm: 'Are you sure you want to logout?',
   logout: 'Logout',
   personalDetails: 'Personal Details',
-<<<<<<< HEAD
   editProfile: 'Edit Profile',
   businessInformation: 'Business Information',
   settings: 'Settings',
@@ -584,106 +483,3 @@ totalGrossWeight: "Total Gross Weight (kg)", // For LCL Totals display
   completed: 'Completed',
 };
 // --- END OF FILE translations/en.ts ---
-=======
-  settings: 'Settings',
-  account: 'Account',
-  preferences: 'Preferences',
-  darkMode: 'Dark Mode',
-  notifications: 'Notifications',
-  language: 'Language',
-  security: 'Security',
-  privacyPolicy: 'Privacy Policy',
-  version: 'Version',
-
-  // Air Freight
-  airFreightQuote: 'Air Freight Quote',
-  serviceType: 'Service Type',
-  standard: 'Standard Air Freight',
-  express: 'Express Air Freight',
-  nextFlight: 'Next Flight Out',
-  dimensions: 'Dimensions',
-  enterDimensions: 'Enter package dimensions (L x W x H)',
-  destinationAirport: 'Destination Airport',
-  originAirport: 'Origin Airport',
-  enterDestinationAirport: 'Enter destination airport',
-  enterOriginAirport: 'Enter origin airport',
-
-  // Land Freight
-  landFreightQuote: 'Land Freight Quote',
-  truckType: 'Truck Type',
-  fullTruck: 'Full Truck Load (FTL)',
-  lessTruck: 'Less Than Truck Load (LTL)',
-  refrigerated: 'Refrigerated Transport',
-  flatbed: 'Flatbed Truck',
-  destinationCity: 'Destination City',
-  originCity: 'Origin City',
-  enterDestinationCity: 'Enter destination city',
-  enterOriginCity: 'Enter origin city',
-
-  // Express Courier
-  courierQuote: 'Express Courier Quote',
-  packageType: 'Package Type',
-  document: 'Document',
-  parcel: 'Parcel',
-  priority: 'Priority Level',
-  regular: 'Regular',
-  urgent: 'Urgent',
-  sameDay: 'Same Day',
-
-  // Breakbulk
-  breakbulkQuote: 'Breakbulk & Project Cargo Quote',
-  cargoType: 'Cargo Type',
-  machinery: 'Machinery',
-  industrial: 'Industrial Equipment',
-  construction: 'Construction Equipment',
-  vehicles: 'Vehicles',
-  other: 'Other',
-  equipmentNeeded: 'Special Equipment Needed',
-  crane: 'Crane',
-  forklift: 'Forklift',
-  flatRack: 'Flat Rack',
-  openTop: 'Open Top',
-  
-  // Customs
-  customsQuote: 'Customs Clearance Quote',
-  importExportType: 'Import/Export Type',
-  permanent: 'Permanent',
-  temporary: 'Temporary',
-  reExport: 'Re-Export',
-  declarationType: 'Declaration Type',
-  dutyExemption: 'Duty Exemption Required',
-
-  // Quote History
-  history: 'History',
-  quoteHistory: 'Quote History',
-  noQuotes: 'No Quotes Yet',
-  noQuotesDesc: 'Your quote history will appear here once you request a quote',
-  sendEmail: 'Send Email',
-  sendWhatsApp: 'Send WhatsApp',
-  shareQuote: 'Share Quote',
-  shareQuoteDesc: 'Choose how you would like to share your quote request',
-  saveOnly: 'Save Only',
-  
-  // Quote Status
-  pending: 'Pending',
-  completed: 'Completed',
-
-  // Route Information
-  originCountry: 'Origin Country',
-  originCity: 'Origin City',
-  originPort: 'Origin Port',
-  pickupLocation: 'Pickup Location',
-  destinationCountry: 'Destination Country',
-  destinationCity: 'Destination City',
-  destinationPort: 'Destination Port',
-  deliveryAddress: 'Delivery Address',
-  enterOriginCountry: 'Enter origin country',
-  enterOriginCity: 'Enter origin city',
-  enterOriginPort: 'Enter origin port',
-  enterPickupLocation: 'Enter detailed pickup location',
-  enterDestinationCountry: 'Enter destination country',
-  enterDestinationCity: 'Enter destination city',
-  enterDestinationPort: 'Enter destination port',
-  enterDeliveryAddress: 'Enter detailed delivery address'
-};
->>>>>>> 8d1b3c625f4e35ee3c88f13c558bfb6f80b500b0

@@ -1,16 +1,9 @@
-<<<<<<< HEAD
 // --- START OF FILE translations/ar.ts (Updated) ---
 
 export const ar = {
   // App
   appName: 'كومباس أوشن لوجستكس',
 
-=======
-export const ar = {
-  // App
-  appName: 'كومباس أوشن لوجستكس',
-  
->>>>>>> 8d1b3c625f4e35ee3c88f13c558bfb6f80b500b0
   // Common
   loading: 'جاري التحميل...',
   cancel: 'إلغاء',
@@ -19,7 +12,6 @@ export const ar = {
   delete: 'حذف',
   submit: 'إرسال',
   optional: 'اختياري',
-<<<<<<< HEAD
   error: 'خطأ',
   yes: "نعم",
   no: "لا",
@@ -30,32 +22,21 @@ export const ar = {
   size: "الحجم", // Added
   quantity: "الكمية", // Added
 
-=======
-  
->>>>>>> 8d1b3c625f4e35ee3c88f13c558bfb6f80b500b0
   // Tabs
   home: 'الرئيسية',
   quote: 'طلب سعر',
   tracking: 'تتبع',
   services: 'الخدمات',
   profile: 'الملف الشخصي',
-<<<<<<< HEAD
   history: 'السجل',
 
   // Home Screen
   homeHeroTitle: 'حلول الشحن العالمية',
   homeHeroSubtitle: ' خدمات شحن سريعة و موثوقة للشركات و الأفراد, أسرع مما تتخيل!',
-=======
-  
-  // Home Screen
-  homeHeroTitle: 'حلول الشحن العالمية',
-  homeHeroSubtitle: 'خدمات شحن سريعة وموثوقة للشركات والأفراد',
->>>>>>> 8d1b3c625f4e35ee3c88f13c558bfb6f80b500b0
   requestQuote: 'طلب عرض سعر',
   ourServices: 'خدماتنا',
   whyChooseUs: 'لماذا تختارنا',
   globalNetwork: 'شبكة عالمية',
-<<<<<<< HEAD
   globalNetworkDesc: 'تواصل مع شبكتنا الواسعة من مكاتبنا بالاضافة الى شركاء الشحن في جميع أنحاء العالم',
   customSolutions: 'حلول مخصصة',
   customSolutionsDesc: 'حلول شحن مصممة خصيصًا لتلبية متطلباتك المحددة',
@@ -77,17 +58,6 @@ export const ar = {
 
 
   // Quote Screen (Main Selection)
-=======
-  globalNetworkDesc: 'تواصل مع شبكتنا الواسعة من شركاء الشحن في جميع أنحاء العالم',
-  customSolutions: 'حلول مخصصة',
-  customSolutionsDesc: 'حلول شحن مصممة خصيصًا لتلبية متطلباتك المحددة',
-  expertise: 'خبرة في المجال',
-  expertiseDesc: 'أكثر من 15 عامًا من الخبرة في مجال الشحن والخدمات اللوجستية',
-  contactUs: 'اتصل بنا',
-  contactUsDesc: 'لديك أسئلة؟ فريقنا جاهز لمساعدتك في جميع احتياجات الشحن الخاصة بك',
-  
-  // Quote Screen
->>>>>>> 8d1b3c625f4e35ee3c88f13c558bfb6f80b500b0
   selectShippingMode: 'اختر طريقة الشحن',
   selectShippingModeDesc: 'اختر نوع خدمة الشحن التي تحتاجها',
   seaFreight: 'الشحن البحري',
@@ -105,15 +75,11 @@ export const ar = {
   needHelp: 'تحتاج مساعدة؟',
   needHelpDesc: 'يمكن لخبراء الشحن لدينا إرشادك خلال العملية',
   contactSupport: 'اتصل بالدعم',
-<<<<<<< HEAD
    newQuoteRequest: 'طلب عرض سعر جديد',
   containerType: 'نوع الحاوية', // Modified for clarity
   containerSize: 'حجم الحاوية', // Modified for clarity
   quoteType: 'نوع عرض السعر',
 
-=======
-  
->>>>>>> 8d1b3c625f4e35ee3c88f13c558bfb6f80b500b0
   // Services Screen
   servicesIntro: 'تقدم كومباس أوشن لوجستكس حلولًا شاملة للشحن والخدمات اللوجستية لتلبية احتياجات عملائنا المتنوعة. استكشف خدماتنا أدناه.',
   seaFreightLongDesc: 'تشمل خدمات الشحن البحري لدينا خيارات الحاوية الكاملة (FCL) والحاوية الأقل من حمولة كاملة (LCL). نتعامل مع جميع أنواع الحاويات بما في ذلك 20 قدمًا، 40 قدمًا، الحاويات المرتفعة، والمبردة، والمعدات المتخصصة.',
@@ -125,7 +91,6 @@ export const ar = {
   customRequests: 'طلبات الشحن المخصصة',
   customRequestsDesc: 'هل تحتاج إلى حل شحن متخصص؟ اتصل بفريقنا لمناقشة متطلباتك المحددة.',
   getQuote: 'طلب سعر',
-<<<<<<< HEAD
   newQuoteRequestMessageBody: "عزيزي الفريق،\n\nيرجى الاطلاع أدناه على طلب عرض سعر جديد.\n\n",
   newQuoteRequestWhatsappIntro: "طلب عرض سعر جديد:\n",
    quoteDetailsLabel: "تفاصيل عرض السعر:",
@@ -158,11 +123,6 @@ export const ar = {
   enterTrackingId: "أدخل رقم التتبع",
   invalidAWBFormat: "تنسيق بوليصة الشحن الجوي غير صالح. يجب أن تكون البادئة 3 أرقام والرقم 7-8 أرقام.",
   awbPrefixNumberRequired: "بادئة ورقم بوليصة الشحن الجوي مطلوبان.",
-=======
-  
-  // Tracking Screen
-  trackShipment: 'تتبع الشحنة',
->>>>>>> 8d1b3c625f4e35ee3c88f13c558bfb6f80b500b0
   enterTrackingNumber: 'أدخل رقم التتبع',
   trackingNumberRequired: 'رقم التتبع مطلوب',
   track: 'تتبع',
@@ -177,7 +137,6 @@ export const ar = {
   enterTrackingDetails: 'أدخل رقم التتبع الخاص بك لمشاهدة تفاصيل الشحنة',
   inTransit: 'قيد النقل',
   delivered: 'تم التسليم',
-<<<<<<< HEAD
   trackTraceInfo: "سيتم إعادة توجيهك إلى track-trace.com حيث قد تحتاج إلى تحديد شركة النقل وإعادة إدخال الرقم.",
 
   // Quote Forms (General)
@@ -187,23 +146,6 @@ export const ar = {
   shipmentType: 'نوع الشحنة',
   import: 'استيراد',
   export: 'تصدير',
-=======
-  
-  // Quote Form
-  seaFreightQuote: 'عرض سعر الشحن البحري',
-  shipmentType: 'نوع الشحنة',
-  import: 'استيراد',
-  export: 'تصدير',
-  containerDetails: 'تفاصيل الحاوية',
-  selectContainerType: 'اختر نوع الحاوية',
-  selectContainerSize: 'اختر حجم الحاوية',
-  fcl: 'حاوية كاملة (FCL)',
-  lcl: 'أقل من حاوية كاملة (LCL)',
-  '20ft': '20 قدم قياسي',
-  '40ft': '40 قدم قياسي',
-  '40ftHC': '40 قدم مرتفع',
-  leaveToCompany: 'اترك الاختيار للشركة',
->>>>>>> 8d1b3c625f4e35ee3c88f13c558bfb6f80b500b0
   routeInformation: 'معلومات المسار',
   pickupAddress: 'عنوان الاستلام',
   deliveryAddress: 'عنوان التسليم',
@@ -213,38 +155,24 @@ export const ar = {
   originCountry: 'بلد المنشأ',
   enterDestinationCountry: 'أدخل بلد الوجهة',
   enterOriginCountry: 'أدخل بلد المنشأ',
-<<<<<<< HEAD
-=======
-  destinationPort: 'ميناء الوجهة',
-  originPort: 'ميناء المنشأ',
-  enterDestinationPort: 'أدخل ميناء الوجهة',
-  enterOriginPort: 'أدخل ميناء المنشأ',
->>>>>>> 8d1b3c625f4e35ee3c88f13c558bfb6f80b500b0
   cargoDetails: 'تفاصيل البضاعة',
   commodityDescription: 'وصف البضاعة',
   enterCommodityDescription: 'أدخل وصف البضائع',
   hsCode: 'رمز النظام المنسق',
   enterHsCode: 'أدخل رمز النظام المنسق إذا كان معروفًا',
-<<<<<<< HEAD
   packingList: 'قائمة التعبئة',
-=======
->>>>>>> 8d1b3c625f4e35ee3c88f13c558bfb6f80b500b0
   uploadPackingList: 'تحميل قائمة التعبئة',
   packingListUploaded: 'تم تحميل قائمة التعبئة',
   grossWeight: 'الوزن الإجمالي',
   enterGrossWeight: 'أدخل الوزن الإجمالي بالكيلوجرام',
-<<<<<<< HEAD
   dimensions: 'الأبعاد',
   enterDimensions: 'أدخل أبعاد الشحنة (طول × عرض × ارتفاع)',
-=======
->>>>>>> 8d1b3c625f4e35ee3c88f13c558bfb6f80b500b0
   cargoReadyDate: 'تاريخ جاهزية البضاعة',
   enterCargoReadyDate: 'متى ستكون البضاعة جاهزة؟',
   additionalServices: 'خدمات إضافية',
   incoterms: 'شروط التجارة الدولية',
   requireInsurance: 'تأمين على البضاعة',
   requireClearance: 'تخليص جمركي',
-<<<<<<< HEAD
   requireCustomsClearance: 'تخليص جمركي',
   additionalNotes: 'ملاحظات إضافية',
   enterAdditionalNotes: 'أدخل أي متطلبات خاصة أو ملاحظات',
@@ -363,14 +291,6 @@ export const ar = {
   otherDocuments: 'مستندات أخرى',
   uploadAdditionalDocument: 'تحميل مستند إضافي',
 
-=======
-  additionalNotes: 'ملاحظات إضافية',
-  enterAdditionalNotes: 'أدخل أي متطلبات خاصة أو ملاحظات',
-  submitQuoteRequest: 'إرسال طلب السعر',
-  next: 'التالي',
-  previous: 'السابق',
-  
->>>>>>> 8d1b3c625f4e35ee3c88f13c558bfb6f80b500b0
   // Quote Success
   quoteSubmittedTitle: 'تم إرسال طلب السعر!',
   quoteSubmittedMessage: 'شكرًا لك على إرسال طلب السعر. سيقوم فريقنا بمراجعة متطلباتك والرد عليك في أقرب وقت.',
@@ -383,7 +303,6 @@ export const ar = {
   contactEmail: 'البريد الإلكتروني',
   backToHome: 'العودة للرئيسية',
   requestAnotherQuote: 'طلب سعر آخر',
-<<<<<<< HEAD
   "userNameLabel": "اسم مقدم الطلب",
   "userEmailLabel": "بريد مقدم الطلب",
   "userPhoneLabel": "هاتف مقدم الطلب",
@@ -415,9 +334,6 @@ export const ar = {
   copyDetailsHint: "(قد تحتاج إلى نسخ هذه التفاصيل يدويًا إلى رسالة واتساب الخاصة بك إذا لم يتم ملؤها مسبقًا.)",
 
 
-=======
-  
->>>>>>> 8d1b3c625f4e35ee3c88f13c558bfb6f80b500b0
   // Authentication
   signIn: 'تسجيل الدخول',
   signInSubtitle: 'مرحبًا بعودتك! الرجاء تسجيل الدخول للمتابعة',
@@ -427,19 +343,13 @@ export const ar = {
   dontHaveAccount: 'ليس لديك حساب؟',
   register: 'التسجيل',
   createAccount: 'إنشاء حساب',
-<<<<<<< HEAD
   noChangesMessage: 'لم يتم إجراء أي تغييرات على ملفك الشخصي.',
-=======
->>>>>>> 8d1b3c625f4e35ee3c88f13c558bfb6f80b500b0
   createAccountSubtitle: 'انضم إلى كومباس أوشن لوجستكس للوصول إلى الميزات الحصرية',
   fullName: 'الاسم الكامل',
   phone: 'رقم الهاتف',
   companyName: 'اسم الشركة',
-<<<<<<< HEAD
   companyNameOptional: 'اسم الشركة (اختياري)',
   noChangesTitle: 'لا توجد تغييرات',
-=======
->>>>>>> 8d1b3c625f4e35ee3c88f13c558bfb6f80b500b0
   businessType: 'نوع النشاط',
   importer: 'مستورد',
   exporter: 'مصدر',
@@ -447,7 +357,6 @@ export const ar = {
   personal: 'شخصي',
   confirmPassword: 'تأكيد كلمة المرور',
   alreadyHaveAccount: 'لديك حساب بالفعل؟',
-<<<<<<< HEAD
   country: "الدولة",
   selectCountry: "اختر دولتك",
   countryRequired: "الدولة مطلوبة",
@@ -459,9 +368,6 @@ export const ar = {
   bahrain: "البحرين",
   kuwait: "الكويت",
 
-=======
-  
->>>>>>> 8d1b3c625f4e35ee3c88f13c558bfb6f80b500b0
   // Validation
   emailRequired: 'البريد الإلكتروني مطلوب',
   emailInvalid: 'الرجاء إدخال بريد إلكتروني صالح',
@@ -472,20 +378,13 @@ export const ar = {
   phoneInvalid: 'الرجاء إدخال رقم هاتف صالح',
   confirmPasswordRequired: 'الرجاء تأكيد كلمة المرور',
   passwordsDoNotMatch: 'كلمات المرور غير متطابقة',
-<<<<<<< HEAD
 
   // Profile, Edit Profile, Settings
-=======
-  trackingNumberRequired: 'الرجاء إدخال رقم التتبع',
-  
-  // Profile
->>>>>>> 8d1b3c625f4e35ee3c88f13c558bfb6f80b500b0
   signInRequired: 'الرجاء تسجيل الدخول لعرض ملفك الشخصي',
   logoutTitle: 'تسجيل الخروج',
   logoutConfirm: 'هل أنت متأكد أنك تريد تسجيل الخروج؟',
   logout: 'تسجيل الخروج',
   personalDetails: 'التفاصيل الشخصية',
-<<<<<<< HEAD
   editProfile: 'تعديل الملف الشخصي',
   businessInformation: 'معلومات العمل',
   settings: 'الإعدادات',
@@ -585,106 +484,3 @@ export const ar = {
   completed: 'مكتمل',
 };
 // --- END OF FILE translations/ar.ts ---
-=======
-  settings: 'الإعدادات',
-  account: 'الحساب',
-  preferences: 'التفضيلات',
-  darkMode: 'الوضع المظلم',
-  notifications: 'الإشعارات',
-  language: 'اللغة',
-  security: 'الأمان',
-  privacyPolicy: 'سياسة الخصوصية',
-  version: 'الإصدار',
-
-  // Air Freight
-  airFreightQuote: 'طلب سعر الشحن الجوي',
-  serviceType: 'نوع الخدمة',
-  standard: 'شحن جوي قياسي',
-  express: 'شحن جوي سريع',
-  nextFlight: 'الرحلة التالية',
-  dimensions: 'الأبعاد',
-  enterDimensions: 'أدخل أبعاد الشحنة (الطول × العرض × الارتفاع)',
-  destinationAirport: 'مطار الوصول',
-  originAirport: 'مطار المغادرة',
-  enterDestinationAirport: 'أدخل مطار الوصول',
-  enterOriginAirport: 'أدخل مطار المغادرة',
-
-  // Land Freight
-  landFreightQuote: 'طلب سعر الشحن البري',
-  truckType: 'نوع الشاحنة',
-  fullTruck: 'شاحنة كاملة (FTL)',
-  lessTruck: 'أقل من شاحنة (LTL)',
-  refrigerated: 'نقل مبرد',
-  flatbed: 'شاحنة مسطحة',
-  destinationCity: 'مدينة الوصول',
-  originCity: 'مدينة المغادرة',
-  enterDestinationCity: 'أدخل مدينة الوصول',
-  enterOriginCity: 'أدخل مدينة المغادرة',
-
-  // Express Courier
-  courierQuote: 'طلب سعر البريد السريع',
-  packageType: 'نوع الطرد',
-  document: 'مستند',
-  parcel: 'طرد',
-  priority: 'مستوى الأولوية',
-  regular: 'عادي',
-  urgent: 'عاجل',
-  sameDay: 'نفس اليوم',
-
-  // Breakbulk
-  breakbulkQuote: 'طلب سعر البضائع العامة والمشاريع',
-  cargoType: 'نوع البضاعة',
-  machinery: 'آلات',
-  industrial: 'معدات صناعية',
-  construction: 'معدات بناء',
-  vehicles: 'مركبات',
-  other: 'أخرى',
-  equipmentNeeded: 'المعدات الخاصة المطلوبة',
-  crane: 'رافعة',
-  forklift: 'رافعة شوكية',
-  flatRack: 'حاوية مسطحة',
-  openTop: 'حاوية مفتوحة',
-  
-  // Customs
-  customsQuote: 'طلب سعر التخليص الجمركي',
-  importExportType: 'نوع الاستيراد/التصدير',
-  permanent: 'دائم',
-  temporary: 'مؤقت',
-  reExport: 'إعادة تصدير',
-  declarationType: 'نوع البيان',
-  dutyExemption: 'مطلوب إعفاء جمركي',
-
-  // Quote History
-  history: 'السجل',
-  quoteHistory: 'سجل عروض الأسعار',
-  noQuotes: 'لا توجد عروض أسعار بعد',
-  noQuotesDesc: 'سيظهر سجل عروض الأسعار الخاص بك هنا بمجرد طلب عرض سعر',
-  sendEmail: 'إرسال بريد إلكتروني',
-  sendWhatsApp: 'إرسال واتساب',
-  shareQuote: 'مشاركة عرض السعر',
-  shareQuoteDesc: 'اختر كيف تريد مشاركة طلب عرض السعر الخاص بك',
-  saveOnly: 'حفظ فقط',
-  
-  // Quote Status
-  pending: 'قيد الانتظار',
-  completed: 'مكتمل',
-
-  // Route Information
-  originCountry: 'بلد المنشأ',
-  originCity: 'مدينة المنشأ',
-  originPort: 'ميناء المنشأ',
-  pickupLocation: 'موقع الاستلام',
-  destinationCountry: 'بلد الوصول',
-  destinationCity: 'مدينة الوصول',
-  destinationPort: 'ميناء الوصول',
-  deliveryAddress: 'عنوان التسليم',
-  enterOriginCountry: 'أدخل بلد المنشأ',
-  enterOriginCity: 'أدخل مدينة المنشأ',
-  enterOriginPort: 'أدخل ميناء المنشأ',
-  enterPickupLocation: 'أدخل موقع الاستلام بالتفصيل',
-  enterDestinationCountry: 'أدخل بلد الوصول',
-  enterDestinationCity: 'أدخل مدينة الوصول',
-  enterDestinationPort: 'أدخل ميناء الوصول',
-  enterDeliveryAddress: 'أدخل عنوان التسليم بالتفصيل'
-};
->>>>>>> 8d1b3c625f4e35ee3c88f13c558bfb6f80b500b0

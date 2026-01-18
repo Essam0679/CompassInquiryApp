@@ -1,10 +1,6 @@
-<<<<<<< HEAD
 // --- START OF FILE app/quote/share-options.tsx (MODIFIED for new AuthContext & userCountryForRouting fix) ---
 
 import { View, Text, StyleSheet, TouchableOpacity, Alert, Platform } from 'react-native';
-=======
-import { View, Text, StyleSheet, TouchableOpacity, Alert } from 'react-native';
->>>>>>> 8d1b3c625f4e35ee3c88f13c558bfb6f80b500b0
 import { useTheme } from '@/context/ThemeContext';
 import { useTranslation } from '@/context/I18nContext';
 import { useRouter } from 'expo-router';
@@ -12,7 +8,6 @@ import { Mail, Phone, X } from 'lucide-react-native';
 import { Linking } from 'react-native';
 import { collection, addDoc } from 'firebase/firestore';
 import { db } from '@/config/firebase';
-<<<<<<< HEAD
 import { useAuth } from '@/context/AuthContext'; 
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import * as MailComposer from 'expo-mail-composer';
@@ -22,16 +17,11 @@ import { formatQuoteDataForMessage, formatDisplayValue, QuoteData } from '@/util
 
 interface DocumentFile { uri?: string | null; name?: string; type?: string; }
 interface QuoteDocuments { commercialInvoice?: DocumentFile | null; certificateOfOrigin?: DocumentFile | null; transportDocument?: DocumentFile | null; packingList?: DocumentFile | null; otherDocuments?: Array<DocumentFile>; }
-=======
-import { useAuth } from '@/context/AuthContext';
-import AsyncStorage from '@react-native-async-storage/async-storage';
->>>>>>> 8d1b3c625f4e35ee3c88f13c558bfb6f80b500b0
 
 export default function ShareOptionsScreen() {
   const { colors } = useTheme();
   const { t } = useTranslation();
   const router = useRouter();
-<<<<<<< HEAD
   const { currentUser, userProfile } = useAuth(); 
 
   const getPrimaryDocumentUri = (quoteData: QuoteData): string | null => { if (quoteData.quoteType === 'Customs Clearance' && quoteData.documents) { return quoteData.documents.commercialInvoice?.uri || quoteData.documents.packingList?.uri || quoteData.documents.transportDocument?.uri || null; } return typeof quoteData.packingList === 'string' ? quoteData.packingList : null; };
@@ -76,164 +66,3 @@ export default function ShareOptionsScreen() {
 // Styles remain the same
 const styles = StyleSheet.create({ container: { flex: 1, justifyContent: 'center', alignItems: 'center', padding: 16, }, card: { width: '100%', maxWidth: 400, borderRadius: 16, padding: 24, paddingTop: 48, elevation: 4, shadowColor: '#000', shadowOffset: { width: 0, height: 2 }, shadowOpacity: 0.1, shadowRadius: 8, }, closeButton: { position: 'absolute', top: 16, right: 16, padding: 8, zIndex: 1, }, title: { fontFamily: 'Poppins-Bold', fontSize: 24, marginBottom: 8, textAlign: 'center', }, subtitle: { fontFamily: 'Inter-Regular', fontSize: 16, marginBottom: 24, textAlign: 'center', lineHeight: 24, }, buttons: { gap: 12, }, button: { flexDirection: 'row', alignItems: 'center', justifyContent: 'center', paddingVertical: 14, paddingHorizontal: 16, borderRadius: 8, gap: 10, }, buttonText: { fontFamily: 'Poppins-Medium', fontSize: 16, }, });
 // --- END OF FILE app/quote/share-options.tsx (MODIFIED for new AuthContext & userCountryForRouting fix) ---
-=======
-  const { user } = useAuth();
-
-  const saveQuote = async (sendMethod = null) => {
-    try {
-      const quoteData = JSON.parse(await AsyncStorage.getItem('lastQuoteData'));
-      
-      const quoteRef = await addDoc(collection(db, 'quotes'), {
-        ...quoteData,
-        userId: user?.id,
-        status: 'pending',
-        createdAt: new Date().toISOString(),
-        sendMethod
-      });
-      
-      if (sendMethod === 'email') {
-        sendEmail(quoteData);
-      } else if (sendMethod === 'whatsapp') {
-        sendWhatsApp(quoteData);
-      }
-      
-      router.push('/quote/success');
-    } catch (error) {
-      console.error('Error saving quote:', error);
-      Alert.alert('Error', 'Failed to save quote. Please try again.');
-    }
-  };
-
-  const sendEmail = (quoteData) => {
-    const subject = encodeURIComponent('New Quote Request');
-    const body = encodeURIComponent(`
-Quote Type: ${quoteData.quoteType}
-Shipment Type: ${quoteData.shipmentType}
-
-Details:
-${JSON.stringify(quoteData, null, 2)}
-    `);
-    
-    Linking.openURL(`mailto:essam.alkhayyat@compasslog.com,mohammed.shafeeq@compasslog.com?subject=${subject}&body=${body}`);
-  };
-
-  const sendWhatsApp = (quoteData) => {
-    const message = encodeURIComponent(`
-New Quote Request:
-
-Quote Type: ${quoteData.quoteType}
-Shipment Type: ${quoteData.shipmentType}
-
-Details:
-${JSON.stringify(quoteData, null, 2)}
-    `);
-    
-    Linking.openURL(`https://wa.me/+97433706307?text=${message}`);
-  };
-
-  return (
-    <View style={[styles.container, { backgroundColor: colors.background }]}>
-      <View style={[styles.card, { backgroundColor: colors.card }]}>
-        <TouchableOpacity
-          style={styles.closeButton}
-          onPress={() => router.back()}
-        >
-          <X size={24} color={colors.text} />
-        </TouchableOpacity>
-        
-        <Text style={[styles.title, { color: colors.text }]}>
-          {t('shareQuote')}
-        </Text>
-        
-        <Text style={[styles.subtitle, { color: colors.textSecondary }]}>
-          {t('shareQuoteDesc')}
-        </Text>
-        
-        <View style={styles.buttons}>
-          <TouchableOpacity
-            style={[styles.button, { backgroundColor: colors.primary }]}
-            onPress={() => saveQuote('email')}
-          >
-            <Mail size={24} color={colors.white} />
-            <Text style={[styles.buttonText, { color: colors.white }]}>
-              {t('sendEmail')}
-            </Text>
-          </TouchableOpacity>
-          
-          <TouchableOpacity
-            style={[styles.button, { backgroundColor: '#25D366' }]}
-            onPress={() => saveQuote('whatsapp')}
-          >
-            <Phone size={24} color={colors.white} />
-            <Text style={[styles.buttonText, { color: colors.white }]}>
-              {t('sendWhatsApp')}
-            </Text>
-          </TouchableOpacity>
-          
-          <TouchableOpacity
-            style={[styles.button, { backgroundColor: colors.backgroundSecondary }]}
-            onPress={() => saveQuote()}
-          >
-            <Text style={[styles.buttonText, { color: colors.text }]}>
-              {t('saveOnly')}
-            </Text>
-          </TouchableOpacity>
-        </View>
-      </View>
-    </View>
-  );
-}
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center',
-    padding: 16,
-  },
-  card: {
-    width: '100%',
-    maxWidth: 400,
-    borderRadius: 16,
-    padding: 24,
-    elevation: 4,
-    shadowColor: '#000',
-    shadowOffset: { width: 0, height: 2 },
-    shadowOpacity: 0.1,
-    shadowRadius: 8,
-  },
-  closeButton: {
-    position: 'absolute',
-    top: 16,
-    right: 16,
-    padding: 8,
-  },
-  title: {
-    fontFamily: 'Poppins-Bold',
-    fontSize: 24,
-    marginBottom: 8,
-    textAlign: 'center',
-  },
-  subtitle: {
-    fontFamily: 'Inter-Regular',
-    fontSize: 16,
-    marginBottom: 24,
-    textAlign: 'center',
-  },
-  buttons: {
-    gap: 12,
-  },
-  button: {
-    flexDirection: 'row',
-    alignItems: 'center',
-    justifyContent: 'center',
-    padding: 16,
-    borderRadius: 8,
-    gap: 12,
-  },
-  buttonText: {
-    fontFamily: 'Poppins-Medium',
-    fontSize: 16,
-  },
-});
->>>>>>> 8d1b3c625f4e35ee3c88f13c558bfb6f80b500b0

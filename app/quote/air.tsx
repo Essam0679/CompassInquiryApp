@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 // --- START OF FILE air.tsx (Updated for In-Screen Cancel Button) ---
 
 import { useState } from 'react'; // Removed useEffect
@@ -14,20 +13,6 @@ import * as DocumentPicker from 'expo-document-picker';
 import DropDownPicker from 'react-native-dropdown-picker';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 // Removed: import ExitQuoteButton from '@/components/common/ExitQuoteButton';
-=======
-import { useState } from 'react';
-import { View, Text, StyleSheet, ScrollView, TextInput, TouchableOpacity, ActivityIndicator } from 'react-native';
-import { useTheme } from '@/context/ThemeContext';
-import { useTranslation } from '@/context/I18nContext';
-import { useRouter } from 'expo-router';
-import { Check, Plus, File } from 'lucide-react-native';
-import Header from '@/components/common/Header';
-import FormStepper from '@/components/quote/FormStepper';
-import MultiForm from '@/components/quote/MultiForm';
-import * as ImagePicker from 'expo-image-picker';
-import DropDownPicker from 'react-native-dropdown-picker';
-import AsyncStorage from '@react-native-async-storage/async-storage';
->>>>>>> 8d1b3c625f4e35ee3c88f13c558bfb6f80b500b0
 
 interface Package {
   length: string;
@@ -44,11 +29,7 @@ interface FormData {
   originCountry: string;
   originCity: string;
   originAirport: string;
-<<<<<<< HEAD
   pickupAddress: string;
-=======
-  pickupLocation: string;
->>>>>>> 8d1b3c625f4e35ee3c88f13c558bfb6f80b500b0
   destinationCountry: string;
   destinationCity: string;
   destinationAirport: string;
@@ -67,7 +48,6 @@ interface FormData {
   notes: string;
 }
 
-<<<<<<< HEAD
 const emptyPackage: Package = {
   length: '',
   width: '',
@@ -77,8 +57,6 @@ const emptyPackage: Package = {
   volumetricWeight: '0'
 };
 
-=======
->>>>>>> 8d1b3c625f4e35ee3c88f13c558bfb6f80b500b0
 export default function AirFreightQuoteScreen() {
   const { colors } = useTheme();
   const { t } = useTranslation();
@@ -92,11 +70,7 @@ export default function AirFreightQuoteScreen() {
     originCountry: '',
     originCity: '',
     originAirport: '',
-<<<<<<< HEAD
     pickupAddress: '',
-=======
-    pickupLocation: '',
->>>>>>> 8d1b3c625f4e35ee3c88f13c558bfb6f80b500b0
     destinationCountry: '',
     destinationCity: '',
     destinationAirport: '',
@@ -104,13 +78,7 @@ export default function AirFreightQuoteScreen() {
     commodity: '',
     hsCode: '',
     packingList: null,
-<<<<<<< HEAD
     packages: [{ ...emptyPackage }],
-=======
-    packages: [
-      { length: '', width: '', height: '', weight: '', pieces: '1', volumetricWeight: '0' }
-    ],
->>>>>>> 8d1b3c625f4e35ee3c88f13c558bfb6f80b500b0
     totalActualWeight: '0',
     totalVolumetricWeight: '0',
     chargeableWeight: '0',
@@ -144,7 +112,6 @@ export default function AirFreightQuoteScreen() {
     { label: 'DDP', value: 'ddp' }
   ];
 
-<<<<<<< HEAD
   // Removed useEffect for navigation.setOptions
 
   const handleCancelExit = () => {
@@ -170,8 +137,6 @@ export default function AirFreightQuoteScreen() {
   };
 
 
-=======
->>>>>>> 8d1b3c625f4e35ee3c88f13c558bfb6f80b500b0
   const calculateWeights = (packages: Package[]) => {
     let totalActual = 0;
     let totalVolumetric = 0;
@@ -208,7 +173,6 @@ export default function AirFreightQuoteScreen() {
     };
     calculateWeights(updatedPackages);
   };
-<<<<<<< HEAD
 
   const addPackage = () => {
     if (formData.packages.length < 5) {
@@ -226,15 +190,12 @@ export default function AirFreightQuoteScreen() {
       calculateWeights(updatedPackages);
     }
   };
-=======
->>>>>>> 8d1b3c625f4e35ee3c88f13c558bfb6f80b500b0
   
   const handleInputChange = (field: keyof FormData, value: any) => {
     setFormData(prev => ({ ...prev, [field]: value }));
   };
   
   const pickDocument = async () => {
-<<<<<<< HEAD
     try {
       const result = await DocumentPicker.getDocumentAsync({
         copyToCacheDirectory: true, 
@@ -246,37 +207,18 @@ export default function AirFreightQuoteScreen() {
       }
     } catch (error) {
       console.error('Error picking document:', error);
-=======
-    const result = await ImagePicker.launchImageLibraryAsync({
-      mediaTypes: ImagePicker.MediaTypeOptions.All,
-      allowsEditing: false,
-      quality: 1,
-    });
-    
-    if (!result.canceled) {
-      handleInputChange('packingList', result.assets[0].uri);
->>>>>>> 8d1b3c625f4e35ee3c88f13c558bfb6f80b500b0
     }
   };
   
   const handleSubmit = async () => {
-<<<<<<< HEAD
     // This function is called when the user submits the form on the LAST step.
     // The "Cancel" button is separate from this.
     setLoading(true);
-=======
-    setLoading(true);
-    
->>>>>>> 8d1b3c625f4e35ee3c88f13c558bfb6f80b500b0
     try {
       await AsyncStorage.setItem('lastQuoteData', JSON.stringify({
         ...formData,
         quoteType: 'Air Freight'
       }));
-<<<<<<< HEAD
-=======
-      
->>>>>>> 8d1b3c625f4e35ee3c88f13c558bfb6f80b500b0
       router.push('/quote/share-options');
     } catch (error) {
       console.error('Error saving quote data:', error);
@@ -285,7 +227,6 @@ export default function AirFreightQuoteScreen() {
     }
   };
 
-<<<<<<< HEAD
   const handleNext = () => {
     if (activeStep < steps.length - 1) {
       setActiveStep(activeStep + 1);
@@ -302,12 +243,6 @@ export default function AirFreightQuoteScreen() {
     {
       title: t('shipmentDetails'),
       form: ( /* ... Your existing form content for step 1 ... */
-=======
-  const steps = [
-    {
-      title: t('shipmentDetails'),
-      form: (
->>>>>>> 8d1b3c625f4e35ee3c88f13c558bfb6f80b500b0
         <View style={styles.formStep}>
           <Text style={[styles.sectionTitle, { color: colors.text }]}>
             {t('shipmentType')}
@@ -331,10 +266,7 @@ export default function AirFreightQuoteScreen() {
             textStyle={[styles.dropdownText, { color: colors.text }]}
             zIndex={3000}
             zIndexInverse={1000}
-<<<<<<< HEAD
             listMode="SCROLLVIEW"
-=======
->>>>>>> 8d1b3c625f4e35ee3c88f13c558bfb6f80b500b0
           />
           
           <Text style={[styles.sectionTitle, { color: colors.text, marginTop: 24 }]}>
@@ -359,21 +291,14 @@ export default function AirFreightQuoteScreen() {
             textStyle={[styles.dropdownText, { color: colors.text }]}
             zIndex={2000}
             zIndexInverse={2000}
-<<<<<<< HEAD
             listMode="SCROLLVIEW"
-=======
->>>>>>> 8d1b3c625f4e35ee3c88f13c558bfb6f80b500b0
           />
         </View>
       )
     },
     {
       title: t('routeInformation'),
-<<<<<<< HEAD
       form: ( /* ... Your existing form content for step 2 ... */
-=======
-      form: (
->>>>>>> 8d1b3c625f4e35ee3c88f13c558bfb6f80b500b0
         <View style={styles.formStep}>
           <View style={styles.inputGroup}>
             <Text style={[styles.inputLabel, { color: colors.text }]}>
@@ -422,13 +347,8 @@ export default function AirFreightQuoteScreen() {
               style={[styles.textArea, { backgroundColor: colors.backgroundSecondary, color: colors.text, borderColor: colors.border }]}
               placeholder={formData.shipmentType === 'export' ? t('enterPickupLocation') : t('enterDeliveryAddress')}
               placeholderTextColor={colors.textSecondary}
-<<<<<<< HEAD
               value={formData.shipmentType === 'export' ? formData.pickupAddress : formData.deliveryAddress}
               onChangeText={(text) => handleInputChange(formData.shipmentType === 'export' ? 'pickupAddress' : 'deliveryAddress', text)}
-=======
-              value={formData.shipmentType === 'export' ? formData.pickupLocation : formData.deliveryAddress}
-              onChangeText={(text) => handleInputChange(formData.shipmentType === 'export' ? 'pickupLocation' : 'deliveryAddress', text)}
->>>>>>> 8d1b3c625f4e35ee3c88f13c558bfb6f80b500b0
               multiline
               numberOfLines={3}
             />
@@ -481,13 +401,8 @@ export default function AirFreightQuoteScreen() {
               style={[styles.textArea, { backgroundColor: colors.backgroundSecondary, color: colors.text, borderColor: colors.border }]}
               placeholder={formData.shipmentType === 'export' ? t('enterDeliveryAddress') : t('enterPickupLocation')}
               placeholderTextColor={colors.textSecondary}
-<<<<<<< HEAD
               value={formData.shipmentType === 'export' ? formData.deliveryAddress : formData.pickupAddress}
               onChangeText={(text) => handleInputChange(formData.shipmentType === 'export' ? 'deliveryAddress' : 'pickupAddress', text)}
-=======
-              value={formData.shipmentType === 'export' ? formData.deliveryAddress : formData.pickupLocation}
-              onChangeText={(text) => handleInputChange(formData.shipmentType === 'export' ? 'deliveryAddress' : 'pickupLocation', text)}
->>>>>>> 8d1b3c625f4e35ee3c88f13c558bfb6f80b500b0
               multiline
               numberOfLines={3}
             />
@@ -497,11 +412,7 @@ export default function AirFreightQuoteScreen() {
     },
     {
       title: t('cargoDetails'),
-<<<<<<< HEAD
       form: ( /* ... Your existing form content for step 3 ... */
-=======
-      form: (
->>>>>>> 8d1b3c625f4e35ee3c88f13c558bfb6f80b500b0
         <View style={styles.formStep}>
           <View style={styles.inputGroup}>
             <Text style={[styles.inputLabel, { color: colors.text }]}>
@@ -541,7 +452,6 @@ export default function AirFreightQuoteScreen() {
             </Text>
             <Plus size={20} color={colors.primary} />
           </TouchableOpacity>
-<<<<<<< HEAD
           
           {/* Package Management Section */}
           <View style={styles.packageSection}>
@@ -678,108 +588,6 @@ export default function AirFreightQuoteScreen() {
             </View>
           </View>
           
-=======
-
-          <Text style={[styles.sectionTitle, { color: colors.text }]}>
-            Package Dimensions
-          </Text>
-
-          {formData.packages.map((pkg, index) => (
-            <View key={index} style={[styles.packageCard, { backgroundColor: colors.backgroundSecondary }]}>
-              <Text style={[styles.packageTitle, { color: colors.text }]}>
-                Package {index + 1}
-              </Text>
-
-              <View style={styles.dimensionsRow}>
-                <View style={styles.dimensionField}>
-                  <Text style={[styles.fieldLabel, { color: colors.textSecondary }]}>Length (cm)</Text>
-                  <TextInput
-                    style={[styles.dimensionInput, { backgroundColor: colors.background, color: colors.text, borderColor: colors.border }]}
-                    keyboardType="numeric"
-                    value={pkg.length}
-                    onChangeText={(text) => handlePackageChange(index, 'length', text)}
-                    placeholder="0"
-                    placeholderTextColor={colors.textSecondary}
-                  />
-                </View>
-
-                <View style={styles.dimensionField}>
-                  <Text style={[styles.fieldLabel, { color: colors.textSecondary }]}>Width (cm)</Text>
-                  <TextInput
-                    style={[styles.dimensionInput, { backgroundColor: colors.background, color: colors.text, borderColor: colors.border }]}
-                    keyboardType="numeric"
-                    value={pkg.width}
-                    onChangeText={(text) => handlePackageChange(index, 'width', text)}
-                    placeholder="0"
-                    placeholderTextColor={colors.textSecondary}
-                  />
-                </View>
-
-                <View style={styles.dimensionField}>
-                  <Text style={[styles.fieldLabel, { color: colors.textSecondary }]}>Height (cm)</Text>
-                  <TextInput
-                    style={[styles.dimensionInput, { backgroundColor: colors.background, color: colors.text, borderColor: colors.border }]}
-                    keyboardType="numeric"
-                    value={pkg.height}
-                    onChangeText={(text) => handlePackageChange(index, 'height', text)}
-                    placeholder="0"
-                    placeholderTextColor={colors.textSecondary}
-                  />
-                </View>
-              </View>
-
-              <View style={styles.weightRow}>
-                <View style={styles.weightField}>
-                  <Text style={[styles.fieldLabel, { color: colors.textSecondary }]}>Weight (kg)</Text>
-                  <TextInput
-                    style={[styles.dimensionInput, { backgroundColor: colors.background, color: colors.text, borderColor: colors.border }]}
-                    keyboardType="numeric"
-                    value={pkg.weight}
-                    onChangeText={(text) => handlePackageChange(index, 'weight', text)}
-                    placeholder="0"
-                    placeholderTextColor={colors.textSecondary}
-                  />
-                </View>
-
-                <View style={styles.piecesField}>
-                  <Text style={[styles.fieldLabel, { color: colors.textSecondary }]}>Pieces</Text>
-                  <TextInput
-                    style={[styles.dimensionInput, { backgroundColor: colors.background, color: colors.text, borderColor: colors.border }]}
-                    keyboardType="numeric"
-                    value={pkg.pieces}
-                    onChangeText={(text) => handlePackageChange(index, 'pieces', text)}
-                    placeholder="1"
-                    placeholderTextColor={colors.textSecondary}
-                  />
-                </View>
-              </View>
-
-              {pkg.volumetricWeight !== '0' && (
-                <Text style={[styles.volumetricWeight, { color: colors.textSecondary }]}>
-                  Volumetric Weight: {pkg.volumetricWeight} kg
-                </Text>
-              )}
-            </View>
-          ))}
-
-          <View style={[styles.weightSummary, { backgroundColor: colors.card }]}>
-            <View style={styles.summaryRow}>
-              <Text style={[styles.summaryLabel, { color: colors.textSecondary }]}>Total Actual Weight:</Text>
-              <Text style={[styles.summaryValue, { color: colors.text }]}>{formData.totalActualWeight} kg</Text>
-            </View>
-            <View style={styles.summaryRow}>
-              <Text style={[styles.summaryLabel, { color: colors.textSecondary }]}>Total Volumetric Weight:</Text>
-              <Text style={[styles.summaryValue, { color: colors.text }]}>{formData.totalVolumetricWeight} kg</Text>
-            </View>
-            <View style={[styles.summaryRow, styles.chargeableRow]}>
-              <Text style={[styles.summaryLabel, { color: colors.primary }]}>Chargeable Weight:</Text>
-              <Text style={[styles.summaryValue, { color: colors.primary, fontFamily: 'Poppins-Bold' }]}>
-                {formData.chargeableWeight} kg
-              </Text>
-            </View>
-          </View>
-
->>>>>>> 8d1b3c625f4e35ee3c88f13c558bfb6f80b500b0
           <View style={styles.inputGroup}>
             <Text style={[styles.inputLabel, { color: colors.text }]}>
               {t('cargoReadyDate')}
@@ -797,11 +605,7 @@ export default function AirFreightQuoteScreen() {
     },
     {
       title: t('additionalServices'),
-<<<<<<< HEAD
       form: ( // This is the LAST step, so the submit button is here
-=======
-      form: (
->>>>>>> 8d1b3c625f4e35ee3c88f13c558bfb6f80b500b0
         <View style={styles.formStep}>
           <Text style={[styles.sectionTitle, { color: colors.text }]}>
             {t('incoterms')}
@@ -823,14 +627,9 @@ export default function AirFreightQuoteScreen() {
             style={[styles.dropdown, { backgroundColor: colors.backgroundSecondary, borderColor: colors.border }]}
             dropDownContainerStyle={[styles.dropdownContainer, { backgroundColor: colors.backgroundSecondary, borderColor: colors.border }]}
             textStyle={[styles.dropdownText, { color: colors.text }]}
-<<<<<<< HEAD
             zIndex={3000} 
             zIndexInverse={1000} 
             listMode="SCROLLVIEW"
-=======
-            zIndex={3000}
-            zIndexInverse={1000}
->>>>>>> 8d1b3c625f4e35ee3c88f13c558bfb6f80b500b0
           />
           
           <View style={styles.optionsContainer}>
@@ -881,16 +680,10 @@ export default function AirFreightQuoteScreen() {
             />
           </View>
           
-<<<<<<< HEAD
           {/* SUBMIT BUTTON FOR THE ENTIRE FORM - RENDERED ON THE LAST STEP */}
           <TouchableOpacity 
             style={[styles.submitButton, { backgroundColor: colors.primary }]}
             onPress={handleSubmit} // This is your existing submit for the whole form
-=======
-          <TouchableOpacity 
-            style={[styles.submitButton, { backgroundColor: colors.primary }]}
-            onPress={handleSubmit}
->>>>>>> 8d1b3c625f4e35ee3c88f13c558bfb6f80b500b0
             disabled={loading}
           >
             {loading ? (
@@ -911,16 +704,11 @@ export default function AirFreightQuoteScreen() {
       <Header title={t('airFreightQuote')} showBackButton={true} />
       
       <FormStepper 
-<<<<<<< HEAD
         steps={steps.map(step => step.title)}
-=======
-        steps={steps.map(step => step.title)} 
->>>>>>> 8d1b3c625f4e35ee3c88f13c558bfb6f80b500b0
         currentStep={activeStep}
         colors={colors}
       />
       
-<<<<<<< HEAD
       <ScrollView 
         style={styles.scrollView} 
         contentContainerStyle={styles.content}
@@ -960,35 +748,12 @@ export default function AirFreightQuoteScreen() {
           </Text>
         </TouchableOpacity>
 
-=======
-      <ScrollView style={styles.scrollView} contentContainerStyle={styles.content}>
-        <MultiForm
-          forms={steps.map(step => step.form)}
-          activeForm={activeStep}
-          onNext={() => {
-            if (activeStep < steps.length - 1) {
-              setActiveStep(activeStep + 1);
-            }
-          }}
-          onPrevious={() => {
-            if (activeStep > 0) {
-              setActiveStep(activeStep - 1);
-            }
-          }}
-          isLastStep={activeStep === steps.length - 1}
-          colors={colors}
-          t={t}
-        />
->>>>>>> 8d1b3c625f4e35ee3c88f13c558bfb6f80b500b0
       </ScrollView>
     </View>
   );
 }
 
-<<<<<<< HEAD
 // Add styles for the new cancel button
-=======
->>>>>>> 8d1b3c625f4e35ee3c88f13c558bfb6f80b500b0
 const styles = StyleSheet.create({
   container: {
     flex: 1,
@@ -1044,10 +809,7 @@ const styles = StyleSheet.create({
     fontFamily: 'Inter-Regular',
     fontSize: 14,
     borderWidth: 1,
-<<<<<<< HEAD
     textAlignVertical: 'top',
-=======
->>>>>>> 8d1b3c625f4e35ee3c88f13c558bfb6f80b500b0
   },
   documentButton: {
     flexDirection: 'row',
@@ -1056,7 +818,6 @@ const styles = StyleSheet.create({
     height: 50,
     borderRadius: 8,
     paddingHorizontal: 16,
-<<<<<<< HEAD
     marginBottom: 16,
     borderWidth: 1,
   },
@@ -1065,16 +826,6 @@ const styles = StyleSheet.create({
     fontSize: 14,
     flex: 1,
     marginLeft: 12,
-=======
-    borderWidth: 1,
-    marginBottom: 16,
-  },
-  documentButtonText: {
-    flex: 1,
-    fontFamily: 'Inter-Regular',
-    fontSize: 14,
-    marginLeft: 8,
->>>>>>> 8d1b3c625f4e35ee3c88f13c558bfb6f80b500b0
   },
   optionsContainer: {
     marginVertical: 16,
@@ -1085,7 +836,6 @@ const styles = StyleSheet.create({
     marginBottom: 12,
   },
   checkbox: {
-<<<<<<< HEAD
     width: 20,
     height: 20,
     borderRadius: 4,
@@ -1175,81 +925,18 @@ const styles = StyleSheet.create({
     flex: 1,
   },
   dimensionLabel: {
-=======
-    width: 24,
-    height: 24,
-    borderRadius: 4,
-    borderWidth: 1,
-    marginRight: 12,
-    justifyContent: 'center',
-    alignItems: 'center',
-  },
-  optionText: {
-    fontFamily: 'Inter-Regular',
-    fontSize: 16,
-  },
-  submitButton: {
-    height: 56,
-    borderRadius: 8,
-    justifyContent: 'center',
-    alignItems: 'center',
-    marginTop: 16,
-  },
-  submitButtonText: {
-    fontFamily: 'Poppins-Medium',
-    fontSize:  16,
-  },
-  packageCard: {
-    borderRadius: 8,
-    padding: 16,
-    marginBottom: 16,
-  },
-  packageTitle: {
-    fontFamily: 'Poppins-Medium',
-    fontSize: 16,
-    marginBottom: 16,
-  },
-  dimensionsRow: {
-    flexDirection: 'row',
-    justifyContent: 'space-between',
-    marginBottom: 12,
-  },
-  weightRow: {
-    flexDirection: 'row',
-    justifyContent: 'space-between',
-    marginBottom: 8,
-  },
-  dimensionField: {
-    flex: 1,
-    marginHorizontal: 4,
-  },
-  weightField: {
-    flex: 2,
-    marginRight: 8,
-  },
-  piecesField: {
-    flex: 1,
-  },
-  fieldLabel: {
->>>>>>> 8d1b3c625f4e35ee3c88f13c558bfb6f80b500b0
     fontFamily: 'Inter-Regular',
     fontSize: 12,
     marginBottom: 4,
   },
   dimensionInput: {
     height: 40,
-<<<<<<< HEAD
     borderRadius: 4,
     paddingHorizontal: 8,
-=======
-    borderRadius: 6,
-    paddingHorizontal: 12,
->>>>>>> 8d1b3c625f4e35ee3c88f13c558bfb6f80b500b0
     borderWidth: 1,
     fontFamily: 'Inter-Regular',
     fontSize: 14,
   },
-<<<<<<< HEAD
   weightRow: {
     flexDirection: 'row',
     marginBottom: 12,
@@ -1279,24 +966,10 @@ const styles = StyleSheet.create({
     borderColor: '#E0E0E0', 
   },
   weightSummaryRow: {
-=======
-  volumetricWeight: {
-    fontFamily: 'Inter-Regular',
-    fontSize: 12,
-    marginTop: 8,
-  },
-  weightSummary: {
-    borderRadius: 8,
-    padding: 16,
-    marginBottom: 24,
-  },
-  summaryRow: {
->>>>>>> 8d1b3c625f4e35ee3c88f13c558bfb6f80b500b0
     flexDirection: 'row',
     justifyContent: 'space-between',
     marginBottom: 8,
   },
-<<<<<<< HEAD
   weightSummaryLabel: {
     fontFamily: 'Inter-Regular',
     fontSize: 14,
@@ -1321,20 +994,3 @@ const styles = StyleSheet.create({
   },
 });
 // --- END OF FILE air.tsx (Updated for In-Screen Cancel Button) ---
-=======
-  chargeableRow: {
-    marginTop: 8,
-    paddingTop: 8,
-    borderTopWidth: 1,
-    borderTopColor: '#E2E8F0',
-  },
-  summaryLabel: {
-    fontFamily: 'Inter-Regular',
-    fontSize: 14,
-  },
-  summaryValue: {
-    fontFamily: 'Inter-SemiBold',
-    fontSize: 14,
-  },
-});
->>>>>>> 8d1b3c625f4e35ee3c88f13c558bfb6f80b500b0

@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 // --- START OF FILE courier.tsx (Updated for In-Screen Cancel Button) ---
 
 import { useState } from 'react'; // Removed useEffect
@@ -6,27 +5,14 @@ import { View, Text, StyleSheet, ScrollView, TextInput, TouchableOpacity, Activi
 import { useTheme } from '@/context/ThemeContext';
 import { useTranslation } from '@/context/I18nContext';
 import { useRouter } from 'expo-router'; // Removed useNavigation
-=======
-import { useState } from 'react';
-import { View, Text, StyleSheet, ScrollView, TextInput, TouchableOpacity, ActivityIndicator } from 'react-native';
-import { useTheme } from '@/context/ThemeContext';
-import { useTranslation } from '@/context/I18nContext';
-import { useRouter } from 'expo-router';
->>>>>>> 8d1b3c625f4e35ee3c88f13c558bfb6f80b500b0
 import { Check, Plus, File } from 'lucide-react-native';
 import Header from '@/components/common/Header';
 import FormStepper from '@/components/quote/FormStepper';
 import MultiForm from '@/components/quote/MultiForm';
-<<<<<<< HEAD
 import * as DocumentPicker from 'expo-document-picker';
 import DropDownPicker from 'react-native-dropdown-picker';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 // Removed: import ExitQuoteButton from '@/components/common/ExitQuoteButton';
-=======
-import * as ImagePicker from 'expo-image-picker';
-import DropDownPicker from 'react-native-dropdown-picker';
-import AsyncStorage from '@react-native-async-storage/async-storage';
->>>>>>> 8d1b3c625f4e35ee3c88f13c558bfb6f80b500b0
 
 interface FormData {
   shipmentType: string;
@@ -34,11 +20,7 @@ interface FormData {
   priority: string;
   originCountry: string;
   originCity: string;
-<<<<<<< HEAD
   pickupAddress: string;
-=======
-  pickupLocation: string;
->>>>>>> 8d1b3c625f4e35ee3c88f13c558bfb6f80b500b0
   destinationCountry: string;
   destinationCity: string;
   deliveryAddress: string;
@@ -63,11 +45,7 @@ export default function CourierQuoteScreen() {
     priority: 'regular',
     originCountry: '',
     originCity: '',
-<<<<<<< HEAD
     pickupAddress: '',
-=======
-    pickupLocation: '',
->>>>>>> 8d1b3c625f4e35ee3c88f13c558bfb6f80b500b0
     destinationCountry: '',
     destinationCity: '',
     deliveryAddress: '',
@@ -99,7 +77,6 @@ export default function CourierQuoteScreen() {
     { label: t('sameDay'), value: 'same_day' }
   ];
   
-<<<<<<< HEAD
   // Removed useEffect for navigation.setOptions
 
   const handleCancelExit = () => {
@@ -124,14 +101,11 @@ export default function CourierQuoteScreen() {
     );
   };
 
-=======
->>>>>>> 8d1b3c625f4e35ee3c88f13c558bfb6f80b500b0
   const handleInputChange = (field: keyof FormData, value: any) => {
     setFormData(prev => ({ ...prev, [field]: value }));
   };
   
   const pickDocument = async () => {
-<<<<<<< HEAD
     try {
       const result = await DocumentPicker.getDocumentAsync({
         copyToCacheDirectory: true,
@@ -143,16 +117,6 @@ export default function CourierQuoteScreen() {
       }
     } catch (error) {
       console.error('Error picking document:', error);
-=======
-    const result = await ImagePicker.launchImageLibraryAsync({
-      mediaTypes: ImagePicker.MediaTypeOptions.All,
-      allowsEditing: false,
-      quality: 1,
-    });
-    
-    if (!result.canceled) {
-      handleInputChange('packingList', result.assets[0].uri);
->>>>>>> 8d1b3c625f4e35ee3c88f13c558bfb6f80b500b0
     }
   };
   
@@ -172,7 +136,6 @@ export default function CourierQuoteScreen() {
       setLoading(false);
     }
   };
-<<<<<<< HEAD
 
   const handleNext = () => {
     if (activeStep < steps.length - 1) {
@@ -185,17 +148,11 @@ export default function CourierQuoteScreen() {
       setActiveStep(activeStep - 1);
     }
   };
-=======
->>>>>>> 8d1b3c625f4e35ee3c88f13c558bfb6f80b500b0
   
   const steps = [
     {
       title: t('shipmentDetails'),
-<<<<<<< HEAD
       form: ( /* ... Your existing form content for step 1 ... */
-=======
-      form: (
->>>>>>> 8d1b3c625f4e35ee3c88f13c558bfb6f80b500b0
         <View style={styles.formStep}>
           <Text style={[styles.sectionTitle, { color: colors.text }]}>
             {t('shipmentType')}
@@ -219,10 +176,7 @@ export default function CourierQuoteScreen() {
             textStyle={[styles.dropdownText, { color: colors.text }]}
             zIndex={3000}
             zIndexInverse={1000}
-<<<<<<< HEAD
             listMode="SCROLLVIEW"
-=======
->>>>>>> 8d1b3c625f4e35ee3c88f13c558bfb6f80b500b0
           />
           
           <Text style={[styles.sectionTitle, { color: colors.text, marginTop: 24 }]}>
@@ -247,10 +201,7 @@ export default function CourierQuoteScreen() {
             textStyle={[styles.dropdownText, { color: colors.text }]}
             zIndex={2000}
             zIndexInverse={2000}
-<<<<<<< HEAD
             listMode="SCROLLVIEW"
-=======
->>>>>>> 8d1b3c625f4e35ee3c88f13c558bfb6f80b500b0
           />
           
           <Text style={[styles.sectionTitle, { color: colors.text, marginTop: 24 }]}>
@@ -275,21 +226,14 @@ export default function CourierQuoteScreen() {
             textStyle={[styles.dropdownText, { color: colors.text }]}
             zIndex={1000}
             zIndexInverse={3000}
-<<<<<<< HEAD
             listMode="SCROLLVIEW"
-=======
->>>>>>> 8d1b3c625f4e35ee3c88f13c558bfb6f80b500b0
           />
         </View>
       )
     },
     {
       title: t('routeInformation'),
-<<<<<<< HEAD
       form: ( /* ... Your existing form content for step 2 ... */
-=======
-      form: (
->>>>>>> 8d1b3c625f4e35ee3c88f13c558bfb6f80b500b0
         <View style={styles.formStep}>
           <View style={styles.inputGroup}>
             <Text style={[styles.inputLabel, { color: colors.text }]}>
@@ -325,13 +269,8 @@ export default function CourierQuoteScreen() {
               style={[styles.textArea, { backgroundColor: colors.backgroundSecondary, color: colors.text, borderColor: colors.border }]}
               placeholder={formData.shipmentType === 'export' ? t('enterPickupLocation') : t('enterDeliveryAddress')}
               placeholderTextColor={colors.textSecondary}
-<<<<<<< HEAD
               value={formData.shipmentType === 'export' ? formData.pickupAddress : formData.deliveryAddress}
               onChangeText={(text) => handleInputChange(formData.shipmentType === 'export' ? 'pickupAddress' : 'deliveryAddress', text)}
-=======
-              value={formData.shipmentType === 'export' ? formData.pickupLocation : formData.deliveryAddress}
-              onChangeText={(text) => handleInputChange(formData.shipmentType === 'export' ? 'pickupLocation' : 'deliveryAddress', text)}
->>>>>>> 8d1b3c625f4e35ee3c88f13c558bfb6f80b500b0
               multiline
               numberOfLines={3}
             />
@@ -371,13 +310,8 @@ export default function CourierQuoteScreen() {
               style={[styles.textArea, { backgroundColor: colors.backgroundSecondary, color: colors.text, borderColor: colors.border }]}
               placeholder={formData.shipmentType === 'export' ? t('enterDeliveryAddress') : t('enterPickupLocation')}
               placeholderTextColor={colors.textSecondary}
-<<<<<<< HEAD
               value={formData.shipmentType === 'export' ? formData.deliveryAddress : formData.pickupAddress}
               onChangeText={(text) => handleInputChange(formData.shipmentType === 'export' ? 'deliveryAddress' : 'pickupAddress', text)}
-=======
-              value={formData.shipmentType === 'export' ? formData.deliveryAddress : formData.pickupLocation}
-              onChangeText={(text) => handleInputChange(formData.shipmentType === 'export' ? 'deliveryAddress' : 'pickupLocation', text)}
->>>>>>> 8d1b3c625f4e35ee3c88f13c558bfb6f80b500b0
               multiline
               numberOfLines={3}
             />
@@ -387,11 +321,7 @@ export default function CourierQuoteScreen() {
     },
     {
       title: t('cargoDetails'),
-<<<<<<< HEAD
       form: ( // This is the LAST step for this form (only 3 steps for Courier)
-=======
-      form: (
->>>>>>> 8d1b3c625f4e35ee3c88f13c558bfb6f80b500b0
         <View style={styles.formStep}>
           <View style={styles.inputGroup}>
             <Text style={[styles.inputLabel, { color: colors.text }]}>
@@ -500,16 +430,11 @@ export default function CourierQuoteScreen() {
       <Header title={t('courierQuote')} showBackButton={true} />
       
       <FormStepper 
-<<<<<<< HEAD
         steps={steps.map(step => step.title)}
-=======
-        steps={steps.map(step => step.title)} 
->>>>>>> 8d1b3c625f4e35ee3c88f13c558bfb6f80b500b0
         currentStep={activeStep}
         colors={colors}
       />
       
-<<<<<<< HEAD
       <ScrollView 
         style={styles.scrollView} 
         contentContainerStyle={styles.content}
@@ -532,27 +457,10 @@ export default function CourierQuoteScreen() {
           activeForm={activeStep}
           onNext={handleNext}
           onPrevious={handleBack}
-=======
-      <ScrollView style={styles.scrollView} contentContainerStyle={styles.content}>
-        <MultiForm
-          forms={steps.map(step => step.form)}
-          activeForm={activeStep}
-          onNext={() => {
-            if (activeStep < steps.length - 1) {
-              setActiveStep(activeStep + 1);
-            }
-          }}
-          onPrevious={() => {
-            if (activeStep > 0) {
-              setActiveStep(activeStep - 1);
-            }
-          }}
->>>>>>> 8d1b3c625f4e35ee3c88f13c558bfb6f80b500b0
           isLastStep={activeStep === steps.length - 1}
           colors={colors}
           t={t}
         />
-<<<<<<< HEAD
 
         {/* "Cancel and Exit" Button - Placed after MultiForm */}
         <TouchableOpacity
@@ -564,8 +472,6 @@ export default function CourierQuoteScreen() {
           </Text>
         </TouchableOpacity>
 
-=======
->>>>>>> 8d1b3c625f4e35ee3c88f13c558bfb6f80b500b0
       </ScrollView>
     </View>
   );
@@ -626,10 +532,7 @@ const styles = StyleSheet.create({
     fontFamily: 'Inter-Regular',
     fontSize: 14,
     borderWidth: 1,
-<<<<<<< HEAD
     textAlignVertical: 'top',
-=======
->>>>>>> 8d1b3c625f4e35ee3c88f13c558bfb6f80b500b0
   },
   documentButton: {
     flexDirection: 'row',
@@ -638,7 +541,6 @@ const styles = StyleSheet.create({
     height: 50,
     borderRadius: 8,
     paddingHorizontal: 16,
-<<<<<<< HEAD
     marginBottom: 16,
     borderWidth: 1,
   },
@@ -673,50 +575,11 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'center',
     marginTop: 24,
-=======
-    borderWidth: 1,
-    marginBottom: 16,
-  },
-  documentButtonText: {
-    flex: 1,
-    fontFamily: 'Inter-Regular',
-    fontSize: 14,
-    marginLeft: 8,
-  },
-  optionsContainer: {
-    marginVertical: 16,
-  },
-  optionItem: {
-    flexDirection: 'row',
-    alignItems: 'center',
-    marginBottom: 12,
-  },
-  checkbox: {
-    width: 24,
-    height: 24,
-    borderRadius: 4,
-    borderWidth: 1,
-    marginRight: 12,
-    justifyContent: 'center',
-    alignItems: 'center',
-  },
-  optionText: {
-    fontFamily: 'Inter-Regular',
-    fontSize: 16,
-  },
-  submitButton: {
-    height: 56,
-    borderRadius: 8,
-    justifyContent: 'center',
-    alignItems: 'center',
-    marginTop: 16,
->>>>>>> 8d1b3c625f4e35ee3c88f13c558bfb6f80b500b0
   },
   submitButtonText: {
     fontFamily: 'Poppins-Medium',
     fontSize: 16,
   },
-<<<<<<< HEAD
   backButton: {
     alignSelf: 'flex-start',
     paddingVertical: 8,
@@ -745,6 +608,3 @@ const styles = StyleSheet.create({
   },
 });
 // --- END OF FILE courier.tsx (Updated for In-Screen Cancel Button) ---
-=======
-});
->>>>>>> 8d1b3c625f4e35ee3c88f13c558bfb6f80b500b0
