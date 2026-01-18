@@ -21,34 +21,29 @@ function RootNavigation() {
   useEffect(() => {
     if (authContextLoading) {
       console.log("ROOT_LAYOUT_DEBUG: useEffect - Auth still loading, doing nothing with navigation yet.");
-      return; // Don't do anything until auth state is resolved
+      return;
     }
 
-    // Once auth state is resolved, we can hide the native splash screen
     SplashScreen.hideAsync();
 
     const isAuthRoute = segments[0] === '(auth)';
 
     if (currentUser) {
-      // User is logged in
       if (isAuthRoute || currentRoute === 'index' || currentRoute === '') {
-        // If they are on an auth screen (login/register) or the initial index screen, redirect to tabs
         console.log("ROOT_LAYOUT_DEBUG: useEffect - User logged in, redirecting to /(tabs)");
         router.replace('/(tabs)');
       } else {
         console.log("ROOT_LAYOUT_DEBUG: useEffect - User logged in, already in a non-auth tab. No redirect needed.");
       }
     } else {
-      // User is NOT logged in
       if (!isAuthRoute) {
-        // If they are not on an auth screen (e.g. tried to access tabs or index directly), redirect to login
         console.log("ROOT_LAYOUT_DEBUG: useEffect - User NOT logged in and NOT in auth group, redirecting to /(auth)/login");
         router.replace('/(auth)/login');
       } else {
          console.log("ROOT_LAYOUT_DEBUG: useEffect - User NOT logged in, already in auth group. No redirect needed.");
       }
     }
-  }, [currentUser, authContextLoading, segments, router]); // segments is important here
+  }, [currentUser, authContextLoading, currentRoute]);
 
   // This initial loading indicator is for the AuthProvider's initial check.
   // The useEffect above will hide the native splash screen once this is false.
