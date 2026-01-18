@@ -1,0 +1,89 @@
+{
+  "expo": {
+<<<<<<< HEAD
+    "name": "Compass Ocean Logistics", 
+    "slug": "bolt-expo-nativewind",
+    "version": "1.0.3",
+=======
+    "name": "Compass Ocean Logistics",
+    "slug": "bolt-expo-nativewind",
+    "version": "1.0.0",
+>>>>>>> 8d1b3c625f4e35ee3c88f13c558bfb6f80b500b0
+    "orientation": "portrait",
+    "icon": "./assets/images/icon.png",
+    "scheme": "compassoceanlogistics",
+    "userInterfaceStyle": "automatic",
+    "newArchEnabled": true,
+    "ios": {
+      "supportsTablet": true,
+      "bundleIdentifier": "com.compassoceanlogistics.app",
+<<<<<<< HEAD
+      "buildNumber": "3", 
+      "displayName": "CompassLog", 
+      "infoPlist": {
+        "NSCameraUsageDescription": "This app needs access to the camera to scan documents and take photos for shipping documentation.",
+        "NSPhotoLibraryUsageDescription": "This app needs access to photos for uploading shipping documentation.",
+        "NSPhotoLibraryAddUsageDescription": "This app needs access to photos to save shipping documentation."
+=======
+      "buildNumber": "1",
+      "infoPlist": {
+        "NSCameraUsageDescription": "This app needs access to the camera to scan documents and take photos for shipping documentation.",
+        "NSPhotoLibraryUsageDescription": "This app needs access to photos for uploading shipping documentation.",
+        "NSPhotoLibraryAddUsageDescription": "This app needs access to photos to save shipping documentation.",
+        "NSLocationWhenInUseUsageDescription": "This app needs access to location to show nearby shipping facilities and calculate shipping routes.",
+        "NSLocationAlwaysAndWhenInUseUsageDescription": "This app needs access to location to show nearby shipping facilities and calculate shipping routes.",
+        "NSLocationAlwaysUsageDescription": "This app needs access to location to show nearby shipping facilities and calculate shipping routes.",
+        "UIBackgroundModes": [
+          "location",
+          "fetch"
+        ]
+>>>>>>> 8d1b3c625f4e35ee3c88f13c558bfb6f80b500b0
+      },
+      "config": {
+        "usesNonExemptEncryption": false
+      },
+      "associatedDomains": [
+        "applinks:compassoceanlogistics.com"
+      ]
+    },
+    "android": {
+      "package": "com.compassoceanlogistics.app",
+<<<<<<< HEAD
+      "buildType": "app-bundle",
+      "versionCode": 2, 
+      "displayName": "CompassLog", 
+=======
+      "versionCode": 1,
+>>>>>>> 8d1b3c625f4e35ee3c88f13c558bfb6f80b500b0
+      "adaptiveIcon": {
+        "foregroundImage": "./assets/images/icon.png",
+        "backgroundColor": "#ffffff"
+      }
+    },
+    "web": {
+      "bundler": "metro",
+      "output": "single",
+      "favicon": "./assets/images/favicon.png"
+    },
+<<<<<<< HEAD
+    "plugins": [
+      "expo-router",
+      "expo-font",
+      "./withRemoveCameraPermission.js"
+    ],
+    "experiments": {
+      "typedRoutes": true
+    },
+    "extra": {
+      "router": {},
+      "eas": {
+        "projectId": "456c7d0c-d950-4071-90ed-1b71aaf6a645"
+      }
+=======
+    "plugins": ["expo-router", "expo-font", "expo-web-browser"],
+    "experiments": {
+      "typedRoutes": true
+>>>>>>> 8d1b3c625f4e35ee3c88f13c558bfb6f80b500b0
+    }
+  }
+}
