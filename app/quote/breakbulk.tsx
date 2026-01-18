@@ -140,8 +140,8 @@ export default function BreakbulkQuoteScreen() {
         copyToCacheDirectory: true,
         type: "*/*"
       });
-      
-      if (!result.canceled) {
+
+      if (!result.canceled && result.assets && result.assets.length > 0) {
         handleInputChange('packingList', result.assets[0].uri);
       }
     } catch (error) {

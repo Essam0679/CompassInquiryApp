@@ -21,7 +21,7 @@ export async function pickDocument(): Promise<DocumentInfo | null> {
       multiple: false
     });
 
-    if (result.canceled) {
+    if (result.canceled || !result.assets || result.assets.length === 0) {
       return null;
     }
 
@@ -29,8 +29,8 @@ export async function pickDocument(): Promise<DocumentInfo | null> {
     return {
       uri: file.uri,
       name: file.name,
-      size: file.size,
-      mimeType: file.mimeType
+      size: file.fileSize || 0,
+      mimeType: file.mimeType || 'application/octet-stream'
     };
   } catch (error) {
     console.error('Error picking document:', error);

@@ -198,11 +198,11 @@ export default function AirFreightQuoteScreen() {
   const pickDocument = async () => {
     try {
       const result = await DocumentPicker.getDocumentAsync({
-        copyToCacheDirectory: true, 
-        type: "*/*" 
+        copyToCacheDirectory: true,
+        type: "*/*"
       });
-      
-      if (!result.canceled) {
+
+      if (!result.canceled && result.assets && result.assets.length > 0) {
         handleInputChange('packingList', result.assets[0].uri);
       }
     } catch (error) {

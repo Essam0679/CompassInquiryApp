@@ -26,7 +26,7 @@ declare module 'expo-document-picker' {
    * Result type when the user successfully picks documents.
    */
   export interface DocumentPickerSuccessResult {
-    type: 'success';
+    canceled: false;
     /** An array of picked assets. For `getDocumentAsync` (single pick), this array will contain one item. */
     assets: DocumentPickerAsset[];
   }
@@ -35,7 +35,7 @@ declare module 'expo-document-picker' {
    * Result type when the user cancels the document picking process.
    */
   export interface DocumentPickerCanceledResult {
-    type: 'cancel';
+    canceled: true;
   }
 
   /**

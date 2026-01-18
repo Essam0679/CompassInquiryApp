@@ -22,7 +22,6 @@ export default function LogoHeader() {
         style={[styles.logo, { width: getLogoWidth() }]}
         resizeMode="contain"
         accessibilityLabel="Compass Ocean Logistics Logo"
-        loading={Platform.OS === 'web' ? 'lazy' : undefined}
         onError={() => setImageError(true)}
       />
     </View>
