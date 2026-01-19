@@ -1,13 +1,12 @@
-// --- START OF FILE app/_layout.tsx (Refined Navigation Logic) ---
 import { useEffect } from 'react';
-import { Slot, useRouter, useSegments, SplashScreen } from 'expo-router'; // Added SplashScreen
+import { Slot, useRouter, useSegments, SplashScreen } from 'expo-router';
 import { AuthProvider, useAuth } from '@/context/AuthContext';
 import { ActivityIndicator, View, StyleSheet } from 'react-native';
 import { ThemeProvider } from '@/context/ThemeContext';
 import { I18nProvider } from '@/context/I18nContext';
 import { GestureHandlerRootView } from 'react-native-gesture-handler';
+import { useFrameworkReady } from '@/hooks/useFrameworkReady';
 
-// Prevent the splash screen from auto-hiding until we're ready.
 SplashScreen.preventAutoHideAsync();
 
 function RootNavigation() {
@@ -59,6 +58,8 @@ function RootNavigation() {
 }
 
 export default function RootLayout() {
+  useFrameworkReady();
+
   return (
     <GestureHandlerRootView style={{ flex: 1 }}>
       <ThemeProvider>
